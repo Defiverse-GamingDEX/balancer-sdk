@@ -6,31 +6,43 @@ import { migrationBuilder } from './migrations/builder';
 import { buildMigrationPool } from './migrations/helpers';
 
 /**
- * This class is responsible for building the transaction used to migrate the liquidity.
- *
- * @example
- * ```typescript
- * const sdk = new BalancerSDK({
- *   network: 1,
- *   rpcUrl: 'https://rpc.ankr.com/eth',
- * })
- *
- * const migrations = new Migrations(
- *   sdk.networkConfig.addresses.contracts.relayerV4 as string,
- *   sdk.data.pools,
- *   sdk.data.liquidityGauges.subgraph,
- *   sdk.provider
- * )
- *
- * const user = '0xfacec29Ae158B26e234B1a81Db2431F6Bd8F8cE8'
- * const from = '0x32296969ef14eb0c6d29669c550d4a0449130230000200000000000000000080'
- * const to = '0x32296969ef14eb0c6d29669c550d4a0449130230000200000000000000000080'
- * const { to, data } = await migrations.pool2pool(user, from, to)
- *
- * const tx = await sdk.provider.sendTransaction({ to, data })
- * ```
+ * Class responsible for building liquidity migration transactions.
  */
 export class Migrations {
+  /**
+   * Instance of a class responsible for building liquidity migration transactions.
+   *
+   * @param relayerAddress Address of the relayer contract.
+   * @param poolsRepository Repository of pools.
+   * @param liquidityGaugesRepository Repository of liquidity gauges.
+   * @param provider Provider to use for RPC data fetching.
+   *
+   * Available methods:
+   * - `pool2pool` - Migrates liquidity from one pool to another.
+   * - `gauge2gauge` - Migrates liquidity from a pool's gauge to another gauge.
+   *
+   * @example
+   * ```typescript
+   * const sdk = new BalancerSDK({
+   *   network: 1,
+   *   rpcUrl: 'https://rpc.ankr.com/eth',
+   * })
+   *
+   * const migrations = new Migrations(
+   *   sdk.networkConfig.addresses.contracts.relayerV4 as string,
+   *   sdk.data.pools,
+   *   sdk.data.liquidityGauges.subgraph,
+   *   sdk.provider
+   * )
+   *
+   * const user = '0xfacec29Ae158B26e234B1a81Db2431F6Bd8F8cE8'
+   * const from = '0x32296969ef14eb0c6d29669c550d4a0449130230000200000000000000000080'
+   * const to = '0x32296969ef14eb0c6d29669c550d4a0449130230000200000000000000000080'
+   * const { to, data } = await migrations.pool2pool(user, from, to)
+   *
+   * const tx = await sdk.provider.sendTransaction({ to, data })
+   * ```
+   */
   constructor(
     public relayerAddress: string,
     public poolsRepository: Findable<Pool, PoolAttribute>,
