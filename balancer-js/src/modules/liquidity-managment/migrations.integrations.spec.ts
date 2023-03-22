@@ -10,7 +10,7 @@ import {
   poolRepository,
   gaugesRepository,
 } from './migrations/builder.spec-helpers';
-import { Migrations } from './migrations';
+import { Migrations, getMinBptOut } from './migrations';
 
 const {
   addresses: { contracts },
@@ -49,17 +49,23 @@ describe('Migrations', () => {
         address = '0x21ac89788d52070D23B8EaCEcBD3Dc544178DC60';
       });
 
-      it('should execute a migration using exit / join', async () => {
-        const balance = await ERC20(pool, signer).balanceOf(address);
+      it('joins a new pool with an limit', async () => {
+        const peek = await migrations.pool2pool(address, from.id, to.id);
+        const peekResult = await signer.call({ ...peek, gasLimit: 8e6 });
+        const expectedBptOut = getMinBptOut(peekResult);
 
-        const txParams = await migrations.pool2pool(address, from.id, to.id);
+        const txParams = await migrations.pool2pool(
+          address,
+          from.id,
+          to.id,
+          expectedBptOut
+        );
 
         await (await signer.sendTransaction(txParams)).wait();
 
         const balanceAfter = await ERC20(pool, signer).balanceOf(address);
-        const diff = Number(balance.sub(balanceAfter));
 
-        expect(diff).to.be.lt(1e18);
+        expect(String(balanceAfter)).to.be.eq(expectedBptOut);
       });
     });
 
@@ -72,16 +78,23 @@ describe('Migrations', () => {
         const gauge = (await gaugesRepository.findBy('poolId', from.id)) as {
           id: string;
         };
-        const balance = await ERC20(gauge.id, signer).balanceOf(address);
 
-        const txParams = await migrations.gauge2gauge(address, from.id, to.id);
+        const peek = await migrations.gauge2gauge(address, from.id, to.id);
+        const peekResult = await signer.call({ ...peek, gasLimit: 8e6 });
+        const expectedBptOut = getMinBptOut(peekResult);
+
+        const txParams = await migrations.gauge2gauge(
+          address,
+          from.id,
+          to.id,
+          expectedBptOut
+        );
 
         await (await signer.sendTransaction(txParams)).wait();
 
         const balanceAfter = await ERC20(gauge.id, signer).balanceOf(address);
-        const diff = Number(balance.sub(balanceAfter));
 
-        expect(diff).to.be.lt(1e18);
+        expect(String(balanceAfter)).to.be.eq(expectedBptOut);
       });
     });
   });
@@ -93,16 +106,28 @@ describe('Migrations', () => {
 
     it('should build a migration using exit / join', async () => {
       const pool = composableStable;
-      const balance = await ERC20(pool.address, signer).balanceOf(address);
 
-      const txParams = await migrations.pool2pool(address, pool.id, pool.id);
+      const peek = await migrations.pool2pool(address, pool.id, pool.id);
+      const peekResult = await signer.call({ ...peek, gasLimit: 8e6 });
+      const expectedBptOut = getMinBptOut(peekResult);
+
+      const txParams = await migrations.pool2pool(
+        address,
+        pool.id,
+        pool.id,
+        expectedBptOut
+      );
 
       await (await signer.sendTransaction(txParams)).wait();
 
       const balanceAfter = await ERC20(pool.address, signer).balanceOf(address);
-      const diff = Number(balance.sub(balanceAfter));
 
-      expect(diff).to.be.lt(1e18);
+      // NOTICE: We don't know the exact amount of BPT that will be minted,
+      // because swaps from the linear pool are not deterministic due to external rates
+      const buffer = BigInt(1e11);
+      expect(BigInt(balanceAfter)).to.satisfy(
+        (v: bigint) => v > v - buffer && v < v + buffer
+      );
     });
   });
 });

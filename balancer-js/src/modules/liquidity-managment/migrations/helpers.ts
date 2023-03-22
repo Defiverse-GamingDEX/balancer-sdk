@@ -1,5 +1,5 @@
 import { Findable, Pool, PoolAttribute } from '@/types';
-import { MigrationPool } from './builder';
+import { MigrationPool, balancerRelayerInterface } from './builder';
 
 /**
  * Foreach AaveLinear: AaveLinear > mainTokens > newAaveLinear
@@ -43,15 +43,14 @@ export const buildPaths = (
 };
 
 const buildPath = (from: MigrationPool, to: MigrationPool) => {
-  switch (from.poolType) {
-    case 'AaveLinear':
-      return buildAaveLinearPath(from, to);
-    default:
-      return [];
+  if (from.poolType?.match(/.*Linear.*/)) {
+    return buildLinearPath(from, to);
   }
+
+  return [];
 };
 
-const buildAaveLinearPath = (from: MigrationPool, to: MigrationPool) => {
+const buildLinearPath = (from: MigrationPool, to: MigrationPool) => {
   if (
     !from.id ||
     !to.id ||
@@ -137,3 +136,28 @@ export const buildMigrationPool = async (
 
 const cmpTokens = (tokenA: MigrationPool, tokenB: MigrationPool): number =>
   tokenA.address.toLowerCase() > tokenB.address.toLowerCase() ? 1 : -1;
+
+/**
+ * Decodes the relayer return value to get the minimum BPT out.
+ *
+ * @param relayerReturnValue
+ * @returns
+ */
+export const getMinBptOut = (relayerReturnValue: string): string => {
+  // Get last two positions of the return value, bptOut is the last one or the second to last one in case there is a gauge deposit
+  // join and gauge deposit are always 0x, so any other value means that's the bptOut
+  const multicallResult = balancerRelayerInterface.decodeFunctionResult(
+    'multicall',
+    relayerReturnValue
+  );
+  const minBptOut = multicallResult[0]
+    .slice(-2)
+    .filter((v: string) => v !== '0x');
+
+  // NOTICE: When swapping from Linear Pools, the swap will query for the current wrapped token rate.
+  // It is possible that the rate changes between the static call checking for the BPT out and the actual swap, causing it to fail.
+  // To avoid this, we can add a small buffer to the min BPT out amount. eg. 1e11 which is 0.0001% of the BPT amount.
+  const buffer =
+    multicallResult[0].length == 4 || multicallResult[0].length == 6 ? 1e11 : 0;
+  return String(BigInt(minBptOut) - BigInt(buffer));
+};

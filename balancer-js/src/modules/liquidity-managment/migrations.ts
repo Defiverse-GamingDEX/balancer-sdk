@@ -5,6 +5,8 @@ import { SubgraphLiquidityGauge } from '../subgraph/subgraph';
 import { migrationBuilder } from './migrations/builder';
 import { buildMigrationPool } from './migrations/helpers';
 
+export { getMinBptOut } from './migrations/helpers';
+
 /**
  * Class responsible for building liquidity migration transactions.
  */
@@ -56,12 +58,14 @@ export class Migrations {
    * @param user - user address
    * @param from - pool address
    * @param to - pool address
+   * @param minBptOut - minimum amount of BPT to receive, when 0 it will include a peek for the amount
    * @returns transaction data
    */
   async pool2pool(
     user: string,
     from: string,
-    to: string
+    to: string,
+    minBptOut = '0'
   ): Promise<{ to: string; data: string }> {
     const fromPool = await buildMigrationPool(from, this.poolsRepository);
     const toPool = await buildMigrationPool(to, this.poolsRepository);
@@ -73,8 +77,10 @@ export class Migrations {
       user,
       this.relayerAddress,
       String(balance),
+      minBptOut,
       fromPool,
-      toPool
+      toPool,
+      minBptOut == '0' // if minBptOut is 0, we peek for the join amount
     );
 
     return {
@@ -95,7 +101,8 @@ export class Migrations {
   async gauge2gauge(
     user: string,
     from: string,
-    to: string
+    to: string,
+    minBptOut = '0'
   ): Promise<{ to: string; data: string }> {
     const fromGauge = await this.gaugesRepository.findBy('poolId', from);
     const toGauge = await this.gaugesRepository.findBy('poolId', to);
@@ -116,8 +123,10 @@ export class Migrations {
       user,
       this.relayerAddress,
       String(balance),
+      minBptOut,
       fromPool,
       toPool,
+      minBptOut == '0', // if minBptOut is 0, we peek for the join amount
       fromGauge.id,
       toGauge.id
     );

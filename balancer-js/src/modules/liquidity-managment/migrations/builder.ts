@@ -5,7 +5,7 @@ import balancerRelayerAbi from '@/lib/abi/BalancerRelayer.json';
 import { Interface } from '@ethersproject/abi';
 import { BigNumber } from '@ethersproject/bignumber';
 
-const balancerRelayerInterface = new Interface(balancerRelayerAbi);
+export const balancerRelayerInterface = new Interface(balancerRelayerAbi);
 
 /**
  * Using array of objects to preserve the tokens order
@@ -19,12 +19,28 @@ export interface MigrationPool {
   mainIndex?: number;
 }
 
+/**
+ * Builds migration call data.
+ *
+ * @param account Address of the migrating account
+ * @param relayer Address of the relayer
+ * @param bptAmount Amount of BPT to migrate
+ * @param minBptOut Minimal amount of BPT to receive
+ * @param from Pool to migrate from
+ * @param to Pool to migrate to
+ * @param peek Add a peek call for the expected BPT amount, decodable by the `decodePeak` function
+ * @param fromGauge Unstake from gauge before migrating
+ * @param toGauge Restake to gauge after migrating
+ * @returns call data
+ */
 export const migrationBuilder = (
-  user: string,
+  account: string,
   relayer: string,
   bptAmount: string,
+  minBptOut: string,
   from: MigrationPool,
   to: MigrationPool,
+  peek = false,
   fromGauge?: string,
   toGauge?: string
 ): string => {
@@ -47,7 +63,7 @@ export const migrationBuilder = (
   // Choose 0 as the exit token index
   // TODO: make default exit token dynamic
   const exitTokenIndex =
-    from.poolType === 'ComposableStable' && from.poolTypeVersion == 1 ? 0 : -1;
+    from.poolType == 'ComposableStable' && from.poolTypeVersion == 1 ? 0 : -1;
 
   // Define output references
   let exitOutputReferences: OutputReference[];
@@ -76,7 +92,7 @@ export const migrationBuilder = (
   const migrationSteps = [];
   const needsExit = true;
   const needsJoin = true;
-  let needsSwap = false;
+  let needsSwap = false; // only if from is ComposableStable
 
   if (from.poolType === 'ComposableStable') {
     needsSwap = true;
@@ -85,7 +101,7 @@ export const migrationBuilder = (
   // 1. Withdraw from old gauge
   if (fromGauge) {
     migrationSteps.push(
-      actions.gaugeWithdrawal(fromGauge, user, relayer, bptAmount)
+      actions.gaugeWithdrawal(fromGauge, account, relayer, bptAmount)
     );
   }
 
@@ -98,7 +114,7 @@ export const migrationBuilder = (
         exitTokenIndex,
         exitOutputReferences,
         bptAmount,
-        fromGauge ? relayer : user,
+        fromGauge ? relayer : account,
         relayer,
         from.poolType == 'ComposableStable'
       )
@@ -106,9 +122,8 @@ export const migrationBuilder = (
   }
 
   // 3. Swap
-  if (needsSwap) {
-    const swapPaths = buildPaths(from.tokens, to.tokens, exitTokenIndex);
-
+  const swapPaths = buildPaths(from.tokens, to.tokens, exitTokenIndex);
+  if (swapPaths.length > 0) {
     // Match exit to swap amounts
     const swaps = swapPaths
       .map((path, idx) => ({
@@ -122,8 +137,6 @@ export const migrationBuilder = (
   }
 
   // 3. Join
-  const minBptOut = '0';
-
   if (needsJoin) {
     // Match swap or exit references to the positions of join tokens
     // In case no reference is defined, the default is 0
@@ -146,16 +159,21 @@ export const migrationBuilder = (
         minBptOut,
         String(joinAmount),
         relayer,
-        toGauge ? relayer : user,
+        toGauge ? relayer : account,
         true
       )
     );
   }
 
+  // Peek the last join amount
+  if (peek === true) {
+    migrationSteps.push(actions.peekChainedReferenceValue(String(joinAmount)));
+  }
+
   // 4. Deposit to the new gauge
   if (toGauge) {
     migrationSteps.push(
-      actions.gaugeDeposit(toGauge, relayer, user, String(joinAmount))
+      actions.gaugeDeposit(toGauge, relayer, account, String(joinAmount))
     );
   }
 

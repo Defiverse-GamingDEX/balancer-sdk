@@ -19,6 +19,7 @@ describe('Migrations', () => {
         address,
         address,
         '1000000000000000000',
+        '0',
         from,
         to
       );

@@ -7,6 +7,8 @@ import { OutputReference } from './types';
 
 export const gaugeWithdrawal = Relayer.encodeGaugeWithdraw;
 export const gaugeDeposit = Relayer.encodeGaugeDeposit;
+export const peekChainedReferenceValue =
+  Relayer.encodePeekChainedReferenceValue;
 
 /**
  * Encodes exitPool callData.
@@ -16,7 +18,7 @@ export const gaugeDeposit = Relayer.encodeGaugeDeposit;
  * @param assets Ordered pool tokens.
  * @param singleTokenExit When
  * @param outputReferences reference to exit amounts for the next transaction
- * @param amount Amount of BPT to exit with.
+ * @param amount Amount of BPT to exit with as a number with 18 digits of precision passed as a string.
  * @param sender Sender address.
  * @param recipient Recipient address.
  * @param isComposable Whether the poolType is ComposableStable or not.
@@ -74,8 +76,8 @@ export const exit = (
  *
  * @param poolId Pool ID.
  * @param assets Ordered pool tokens.
- * @param amountsIn Amounts of tokens to join with.
- * @param minimumBPT Minimum BPT amount to receive.
+ * @param amountsIn Amounts of tokens to join with as a number with 18 digits of precision passed as a string.
+ * @param minimumBPT Minimum BPT amount to receive as a number with 18 digits of precision passed as a string.
  * @param outputReference reference to BPT amount for the next transaction
  * @param sender Sender address.
  * @param recipient Recipient address.
