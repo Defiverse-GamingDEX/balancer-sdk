@@ -124,9 +124,9 @@ describe('Migrations', () => {
 
       // NOTICE: We don't know the exact amount of BPT that will be minted,
       // because swaps from the linear pool are not deterministic due to external rates
-      const buffer = BigInt(1e11);
+      const buffer = BigInt(1e9); // 0.0000001%
       expect(BigInt(balanceAfter)).to.satisfy(
-        (v: bigint) => v > v - buffer && v < v + buffer
+        (v: bigint) => v > v - v / buffer && v < v + v / buffer
       );
     });
   });

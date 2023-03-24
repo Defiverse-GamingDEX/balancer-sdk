@@ -123,7 +123,7 @@ export const migrationBuilder = (
 
   // 3. Swap
   const swapPaths = buildPaths(from.tokens, to.tokens, exitTokenIndex);
-  if (swapPaths.length > 0) {
+  if (swapPaths.flat().length > 0) {
     // Match exit to swap amounts
     const swaps = swapPaths
       .map((path, idx) => ({

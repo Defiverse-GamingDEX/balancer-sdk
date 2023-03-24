@@ -150,14 +150,18 @@ export const getMinBptOut = (relayerReturnValue: string): string => {
     'multicall',
     relayerReturnValue
   );
+
   const minBptOut = multicallResult[0]
     .slice(-2)
     .filter((v: string) => v !== '0x');
 
   // NOTICE: When swapping from Linear Pools, the swap will query for the current wrapped token rate.
   // It is possible that the rate changes between the static call checking for the BPT out and the actual swap, causing it to fail.
-  // To avoid this, we can add a small buffer to the min BPT out amount. eg. 1e11 which is 0.0001% of the BPT amount.
+  // To avoid this, we can add a small buffer to the min BPT out amount. eg. 0.0000001% of the BPT amount.
   const buffer =
-    multicallResult[0].length == 4 || multicallResult[0].length == 6 ? 1e11 : 0;
-  return String(BigInt(minBptOut) - BigInt(buffer));
+    multicallResult[0].length == 4 || multicallResult[0].length == 6
+      ? BigInt(minBptOut) / BigInt(1e9)
+      : BigInt(0);
+
+  return String(BigInt(minBptOut) - buffer);
 };
