@@ -676,6 +676,50 @@ const POOLS_GENERIC: Pools = {
   },
 };
 
+const POOLS_OASYS: Pools = {
+  IdsMap: {},
+  Pagination: {
+    PerPage: 10,
+    PerPool: 10,
+    PerPoolInitial: 5,
+  },
+  DelegateOwner: '0xba1ba1ba1ba1ba1ba1ba1ba1ba1ba1ba1ba1ba1b',
+  ZeroAddress: '0x0000000000000000000000000000000000000000',
+  DynamicFees: {
+    Gauntlet: [],
+  },
+  BlockList: [''],
+  ExcludedPoolTypes: [
+    'Element',
+    'AaveLinear',
+    'EulerLinear',
+    'Linear',
+    'ERC4626Linear',
+    'FX',
+    'Gyro2',
+    'Gyro3',
+    'GyroE',
+    'HighAmpComposableStable',
+  ],
+  Stable: {
+    AllowList: [
+      '0xfedb19ec000d38d92af4b21436870f115db22725000000000000000000000010', // bb-ag-usd
+    ],
+  },
+  Investment: {
+    AllowList: [],
+  },
+  Factories: {
+    '0xcf3821727baa9df36ca25a91da330dd01a0e1743': 'composableStablePool', // ComposableStable V3
+    '0xb74d71ac95427019439c606b70d24ebfd9b9fff2': 'stablePool', // Stable V2
+    '0x4f6a9c852bb5058c3e1d17824a860d60a203e71b': 'weightedPool', // WeightedPool V3
+  },
+  Stakable: {
+    AllowList: [],
+  },
+  Metadata: {},
+};
+
 const POOLS_MAP = {
   [Network.KOVAN]: POOLS_KOVAN,
   [Network.GOERLI]: POOLS_GOERLI,
@@ -683,6 +727,7 @@ const POOLS_MAP = {
   [Network.POLYGON]: POOLS_POLYGON,
   [Network.ARBITRUM]: POOLS_ARBITRUM,
   [Network.GNOSIS]: POOLS_GNOSIS,
+  [Network.OASYS]: POOLS_OASYS,
 };
 
 export function POOLS(networkId: Network): Pools {

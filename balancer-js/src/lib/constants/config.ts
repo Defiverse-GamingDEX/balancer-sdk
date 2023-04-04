@@ -308,7 +308,7 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
     addresses: {
       contracts: {
         vault: '0x0855eA6187dE973Bc5849d67C14f59c6fE2cF039',
-        multicall: '0xbb6fab6b627947dae0a75808250d8b2652952cb5', // NEED CONFIRM
+        multicall: '0xDD99819dDB53fFcc9FF77d8Cda4553b17D27b9a4', // NEED CONFIRM
         relayerV4: '0xeF606F58A4FD0fCcb066c6203d0994694d3eB2D3', // NEED CONFIRM
         balancerHelpers: '0x203d5706ddc75EC8eC69b5564802b037cC8B821A',
         weightedPoolFactory: '0x4F6a9c852Bb5058C3e1d17824A860D60a203E71B',
@@ -316,12 +316,12 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
           '0xcf3821727Baa9df36CA25a91DA330dD01A0e1743',
       },
       tokens: {
-        wrappedNativeAsset: '0x82aF49447D8a07e3bd95BD0d56f35241523fBab1',
+        wrappedNativeAsset: '0xEB7638A7c4eAEb25ECe59F4382b9f06a8056F980',
       },
     },
     urls: {
       subgraph:
-        'http://13.215.226.17:8000/subgraphs/name/balancer-labs/balancer-v2',
+        'https://graphnode.defiverse.net/subgraphs/name/balancer-labs/defiverse',
       gaugesSubgraph: '',
     },
     pools: {},

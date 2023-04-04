@@ -10,6 +10,7 @@ type CommonTokens = {
   BAL: string;
   bbaUSD?: string;
   bbaUSDv2?: string;
+  DFV?: string;
 };
 
 type TokenConstants = {
@@ -179,6 +180,31 @@ export const TOKENS_GENERIC: TokenConstants = {
   },
 };
 
+export const TOKENS_OASYS: TokenConstants = {
+  Popular: {
+    Symbols: ['DFV', 'BAL', 'WETH', 'DAI', 'USDC', 'USDT'],
+  },
+  Addresses: {
+    nativeAsset: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // need CONFIRM
+    wNativeAsset: '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980', // need CONFIRM
+    WETH: '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980',
+    BAL: '0x1f6fb04e57ff270b2c97168e48b5bf5a1e32d8b7',
+    DFV: '0xb7e40D63d0Aee3d6ce83070DD411D901F5E44a9C',
+  },
+  PriceChainMap: {
+    '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980':
+      '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+    '0x62400c6b2685599d1c1308a72c4cb2f6b86b4867':
+      '0x6b175474e89094c44da98b954eedeac495271d0f',
+    '0x4d20bfe67c3f2b3d839b25f2b0cc942bc84c481e':
+      '0xdac17f958d2ee523a2206206994597c13d831ec7',
+    '0x01ac28d93706f5c394b853bba1456f54d9298c8d':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    '0x1f6fb04e57ff270b2c97168e48b5bf5a1e32d8b7':
+      '0xba100000625a3754423978a60c9317c58a424e3d',
+  },
+};
+
 export const TOKENS_MAP = {
   [Network.KOVAN]: TOKENS_KOVAN,
   [Network.GOERLI]: TOKENS_GOERLI,
@@ -186,6 +212,7 @@ export const TOKENS_MAP = {
   [Network.POLYGON]: TOKENS_POLYGON,
   [Network.ARBITRUM]: TOKENS_ARBITRUM,
   [Network.GNOSIS]: TOKENS_GNOSIS,
+  [Network.OASYS]: TOKENS_OASYS,
 };
 
 export function TOKENS(networkId: Network): TokenConstants {
