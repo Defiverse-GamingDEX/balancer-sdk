@@ -39,7 +39,7 @@ export class SubgraphPoolDataService implements PoolDataService {
 
   public async getPools(): Promise<SubgraphPoolBase[]> {
     const pools = await this.getSubgraphPools();
-     console.log(pools,"pools=>getPools");
+   
     const filteredPools = pools.filter((p) => {
       if (!this.network.poolsToIgnore) return true;
       const index = this.network.poolsToIgnore.findIndex((addr) =>
@@ -47,13 +47,13 @@ export class SubgraphPoolDataService implements PoolDataService {
       );
       return index === -1;
     });
-     console.log(filteredPools,"filteredPools=>getPools");
+   
     const mapped = mapPools(filteredPools);
-    console.log(mapped,"mapped=>getPools");
+   
     if (this.sorConfig.fetchOnChainBalances === false) {
       return mapped;
     }
-    console.log(mapped,"getOnChainBalances=>getPools");
+  
     return getOnChainBalances(
       mapped,
       this.network.addresses.contracts.multicall,
@@ -70,7 +70,7 @@ export class SubgraphPoolDataService implements PoolDataService {
     });
 
     const pools = [...pool0, ...pool1000, ...pool2000];
-    console.log(pools,"pools=>getSubgraphPools");
+  
     return pools;
   }
 }
