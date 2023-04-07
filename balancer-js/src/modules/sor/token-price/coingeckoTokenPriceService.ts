@@ -52,7 +52,7 @@ export class CoingeckoTokenPriceService implements TokenPriceService {
         return 'ethereum';
     }
 
-    return '2';
+    return '3';
   }
 
   private get nativeAssetId(): string {

@@ -120,7 +120,7 @@ export class CoingeckoPriceRepository implements Findable<Price> {
         return 'arbitrum-one';
     }
 
-    return '2';
+    return '3';
   }
 
   private url(addresses: string[]): string {
