@@ -110,6 +110,7 @@ export class CoingeckoPriceRepository implements Findable<Price> {
       case 5:
       case 42:
       case 31337:
+      case 16116:
         return 'ethereum';
       case 100:
         return 'xdai';

@@ -48,6 +48,8 @@ export class CoingeckoTokenPriceService implements TokenPriceService {
         return 'arbitrum-one';
       case 100:
         return 'xdai';
+      case 16116:
+        return 'ethereum';
     }
 
     return '2';
@@ -65,6 +67,8 @@ export class CoingeckoTokenPriceService implements TokenPriceService {
         return 'eth';
       case 100:
         return 'xdai';
+      case 16116:
+        return 'eth';
     }
 
     return '';

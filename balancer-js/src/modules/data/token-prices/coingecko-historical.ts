@@ -65,6 +65,7 @@ export class CoingeckoHistoricalPriceRepository implements Findable<Price> {
       case 5:
       case 42:
       case 31337:
+      case 16116:
         return 'ethereum';
       case 137:
         return 'polygon-pos';
