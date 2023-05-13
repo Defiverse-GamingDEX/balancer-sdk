@@ -311,8 +311,8 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
         vault: '0x8F6a1A56D37Ff6Bd1c729c4B629Fe3FA92FC1Cf6',
         multicall: '0xB4FF7AeCCD6dfC8889e45170Caeb128A298821e2', // NEED CONFIRM
         relayerV4: '', // NEED CONFIRM
-        gaugeController: '',
-        veBal: '',
+        gaugeController: '0x5173C46c9E4585732b7660770477449451106553',
+        veBal: '0x78c155933E62b4E3F70F23A232f9176470bf41C9',
         veBalProxy: '',
         balancerHelpers: '0xD69113eFF6b5b10600b25917CB3677aF15ab1a86',
         weightedPoolFactory: '0xDC42d086aF7a4f4D7Cb5cbCD47dB9A67f95c0838',
