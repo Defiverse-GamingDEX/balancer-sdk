@@ -188,8 +188,8 @@ export const TOKENS_OASYS: TokenConstants = {
     nativeAsset: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // need CONFIRM
     wNativeAsset: '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980', // need CONFIRM
     WETH: '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980',
-    BAL: '0x1f6fb04e57ff270b2c97168e48b5bf5a1e32d8b7',
-    DFV: '0xb7e40D63d0Aee3d6ce83070DD411D901F5E44a9C',
+    BAL: '0x738cb40a7cfcd770b9972f3e992811c08613f38d',
+    DFV: '0x738cb40a7cfcd770b9972f3e992811c08613f38d',
   },
   PriceChainMap: {
     '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980':

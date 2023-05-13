@@ -2,7 +2,7 @@ import { Network } from './network';
 import { BalancerNetworkConfig } from '@/types';
 
 //export const balancerVault = '0xBA12222222228d8Ba445958a75a0704d566BF2C8';
-export const balancerVault = '0x0855eA6187dE973Bc5849d67C14f59c6fE2cF039';
+export const balancerVault = '0x23160e7f02e5a61faEED543e8cC18033dd112bf5';
 
 export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
   [Network.MAINNET]: {
@@ -308,13 +308,16 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
     chainId: Network.OASYS, //16116
     addresses: {
       contracts: {
-        vault: '0x0855eA6187dE973Bc5849d67C14f59c6fE2cF039',
-        multicall: '0xDD99819dDB53fFcc9FF77d8Cda4553b17D27b9a4', // NEED CONFIRM
-        relayerV4: '0xeF606F58A4FD0fCcb066c6203d0994694d3eB2D3', // NEED CONFIRM
-        balancerHelpers: '0x203d5706ddc75EC8eC69b5564802b037cC8B821A',
-        weightedPoolFactory: '0x4F6a9c852Bb5058C3e1d17824A860D60a203E71B',
+        vault: '0x8F6a1A56D37Ff6Bd1c729c4B629Fe3FA92FC1Cf6',
+        multicall: '0xB4FF7AeCCD6dfC8889e45170Caeb128A298821e2', // NEED CONFIRM
+        relayerV4: '', // NEED CONFIRM
+        gaugeController: '',
+        veBal: '',
+        veBalProxy: '',
+        balancerHelpers: '0xD69113eFF6b5b10600b25917CB3677aF15ab1a86',
+        weightedPoolFactory: '0xDC42d086aF7a4f4D7Cb5cbCD47dB9A67f95c0838',
         composableStablePoolFactory:
-          '0xcf3821727Baa9df36CA25a91DA330dD01A0e1743',
+          '0x2284883A047a71351F83087B173787FfE4b5b1Be',
       },
       tokens: {
         wrappedNativeAsset: '0xEB7638A7c4eAEb25ECe59F4382b9f06a8056F980',
