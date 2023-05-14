@@ -315,12 +315,12 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
         veBal: '0x78c155933E62b4E3F70F23A232f9176470bf41C9',
         veBalProxy: '',
         balancerHelpers: '0xD69113eFF6b5b10600b25917CB3677aF15ab1a86',
-        weightedPoolFactory: '0xDC42d086aF7a4f4D7Cb5cbCD47dB9A67f95c0838',
+        weightedPoolFactory: '0xdc42d086af7a4f4d7cb5cbcd47db9a67f95c0838',
         composableStablePoolFactory:
-          '0x2284883A047a71351F83087B173787FfE4b5b1Be',
+          '0x2284883a047a71351f83087b173787ffe4b5b1be',
       },
       tokens: {
-        wrappedNativeAsset: '0xEB7638A7c4eAEb25ECe59F4382b9f06a8056F980',
+        wrappedNativeAsset: '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980',
       },
     },
     urls: {
@@ -332,7 +332,7 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
     sorConnectingTokens: [
       {
         symbol: 'weth',
-        address: '0xEB7638A7c4eAEb25ECe59F4382b9f06a8056F980',
+        address: '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980',
       },
     ],
   },
