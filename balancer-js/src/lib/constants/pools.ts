@@ -678,7 +678,7 @@ const POOLS_GENERIC: Pools = {
 
 const POOLS_OASYS: Pools = {
   IdsMap: {
-    veBAL: '0xebc6be23b7bd76774e8a9a168619954d07818c23000200000000000000000001',
+    veBAL: '0x8ea93dfbe0c02aafdc8a9e6bfdd7efacdac8cca6000200000000000000000000',
   },
   Pagination: {
     PerPage: 10,
@@ -712,8 +712,8 @@ const POOLS_OASYS: Pools = {
     AllowList: [],
   },
   Factories: {
-    '0x2284883a047a71351f83087b173787ffe4b5b1be': 'composableStablePool', // ComposableStable V2
-    '0xdc42d086af7a4f4d7cb5cbcd47db9a67f95c0838': 'weightedPool', // WeightedPool V3
+    '0x42dd917a3c8a14a766712fabe7b048f0306246f6': 'composableStablePool', // ComposableStable V2
+    '0x8c96ab92be9a17f6db66bb254c31dd0c263ea81a': 'weightedPool', // WeightedPool V3
   },
   Stakable: {
     AllowList: [],

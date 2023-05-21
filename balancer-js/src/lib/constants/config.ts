@@ -2,7 +2,7 @@ import { Network } from './network';
 import { BalancerNetworkConfig } from '@/types';
 
 //export const balancerVault = '0xBA12222222228d8Ba445958a75a0704d566BF2C8';
-export const balancerVault = '0x23160e7f02e5a61faEED543e8cC18033dd112bf5';
+export const balancerVault = '0xef570b45a20e9bDe7855BDF5940Be3ac17B4c610';
 
 export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
   [Network.MAINNET]: {
@@ -308,16 +308,16 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
     chainId: Network.OASYS, //16116
     addresses: {
       contracts: {
-        vault: '0x8F6a1A56D37Ff6Bd1c729c4B629Fe3FA92FC1Cf6',
-        multicall: '0xB4FF7AeCCD6dfC8889e45170Caeb128A298821e2', // NEED CONFIRM
-        relayerV4: '', // NEED CONFIRM
-        gaugeController: '0x5173C46c9E4585732b7660770477449451106553',
-        veBal: '0x78c155933E62b4E3F70F23A232f9176470bf41C9',
-        veBalProxy: '',
-        balancerHelpers: '0xD69113eFF6b5b10600b25917CB3677aF15ab1a86',
-        weightedPoolFactory: '0xdc42d086af7a4f4d7cb5cbcd47db9a67f95c0838',
+        vault: '0xef570b45a20e9bDe7855BDF5940Be3ac17B4c610',
+        multicall: '0xDD99819dDB53fFcc9FF77d8Cda4553b17D27b9a4', // NEED CONFIRM
+        relayerV4: '0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2', // NEED CONFIRM
+        gaugeController: '0x782896795C815d833D1d25C9cAf418AeE57Aa011',
+        veBal: '0x2600f00FB8E1182B1bC101D27682EC7AB7B3BB30',
+        veBalProxy: '0x72437aAdcB3a28487E4d4975F4dE46ABdb946B32',
+        balancerHelpers: '0x3489417a49Bd0A8420A65B6E1F297C2144E7eE0a',
+        weightedPoolFactory: '0x8c96Ab92be9a17F6DB66bB254c31DD0C263eA81A',
         composableStablePoolFactory:
-          '0x2284883a047a71351f83087b173787ffe4b5b1be',
+          '0x42DD917a3C8A14a766712Fabe7B048f0306246F6',
       },
       tokens: {
         wrappedNativeAsset: '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980',
@@ -326,7 +326,7 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
     urls: {
       subgraph:
         'https://graphnode.defiverse.net/subgraphs/name/balancer-labs/defiverse',
-      gaugesSubgraph: '',
+      gaugesSubgraph: 'https://graphnode.defiverse.net/subgraphs/name/balancer-labs/gauges-defiverse',
     },
     pools: {},
     sorConnectingTokens: [

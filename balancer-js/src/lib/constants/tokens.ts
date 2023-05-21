@@ -188,8 +188,8 @@ export const TOKENS_OASYS: TokenConstants = {
     nativeAsset: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // need CONFIRM
     wNativeAsset: '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980', // need CONFIRM
     WETH: '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980',
-    BAL: '0x738cb40a7cfcd770b9972f3e992811c08613f38d',
-    DFV: '0x738cb40a7cfcd770b9972f3e992811c08613f38d',
+    BAL: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
+    DFV: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
   },
   PriceChainMap: {
     '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980':
@@ -204,10 +204,14 @@ export const TOKENS_OASYS: TokenConstants = {
     // OAS
     '0x7914aa2d50cc4e9b5a6fb6ac58ec7095927b8897':
       '0xba100000625a3754423978a60c9317c58a424e3d',
+    // DFV
+    '0xa3496414a9900a9ae5960c1fec30e563213b68be':
+      '0xba100000625a3754423978a60c9317c58a424e3d',
+
     '0x43831636c9cec4c9c9a950b588ac8ec971588754':
-      '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+      '0xba100000625a3754423978a60c9317c58a424e3d',
     '0xcc90040a931a8147cc2a4411c68348a5a3a363a0':
-      '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+      '0xba100000625a3754423978a60c9317c58a424e3d',
   },
 };
 
