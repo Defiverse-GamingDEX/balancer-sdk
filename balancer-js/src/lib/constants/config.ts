@@ -304,8 +304,8 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
       },
     ],
   },
-  [Network.OASYS]: {
-    chainId: Network.OASYS, //16116
+  [Network.DEFIVERSE]: {
+    chainId: Network.DEFIVERSE, //16116
     addresses: {
       contracts: {
         vault: '0xef570b45a20e9bDe7855BDF5940Be3ac17B4c610',
