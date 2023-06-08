@@ -9,5 +9,5 @@ export enum Network {
   GNOSIS = 100,
   POLYGON = 137,
   ARBITRUM = 42161,
-  OASYS = 16116,
+  DEFIVERSE = 16116,
 }

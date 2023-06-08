@@ -676,7 +676,7 @@ const POOLS_GENERIC: Pools = {
   },
 };
 
-const POOLS_OASYS: Pools = {
+const POOLS_DEFIVERSE: Pools = {
   IdsMap: {
     veBAL: '0x8ea93dfbe0c02aafdc8a9e6bfdd7efacdac8cca6000200000000000000000000',
   },
@@ -731,7 +731,7 @@ const POOLS_MAP = {
   [Network.POLYGON]: POOLS_POLYGON,
   [Network.ARBITRUM]: POOLS_ARBITRUM,
   [Network.GNOSIS]: POOLS_GNOSIS,
-  [Network.OASYS]: POOLS_OASYS,
+  [Network.DEFIVERSE]: POOLS_DEFIVERSE,
 };
 
 export function POOLS(networkId: Network): Pools {
