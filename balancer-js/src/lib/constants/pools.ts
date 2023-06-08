@@ -716,7 +716,10 @@ const POOLS_OASYS: Pools = {
     '0x8c96ab92be9a17f6db66bb254c31dd0c263ea81a': 'weightedPool', // WeightedPool V3
   },
   Stakable: {
-    AllowList: [],
+    AllowList: [
+      '0x402e0638b1d990479a2139709f984cd1ae8c6daf000200000000000000000001',
+      '0xd92e2e3c13c3712af12e4389ee37b67021318812000200000000000000000002',
+    ],
   },
   Metadata: {},
 };
