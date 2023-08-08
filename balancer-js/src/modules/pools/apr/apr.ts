@@ -116,6 +116,7 @@ export class PoolApr {
           } else if (
             pool.poolType === 'ComposableStable' ||
             (pool.poolType === 'Weighted' && pool.poolTypeVersion === 2)
+            // (pool.poolType === 'Weighted' && pool.poolTypeVersion === 3) // Hung added
           ) {
             if (token.isExemptFromYieldProtocolFee) {
               apr = tokenYield;
@@ -139,6 +140,7 @@ export class PoolApr {
             if (
               pool.poolType === 'ComposableStable' ||
               (pool.poolType === 'Weighted' && pool.poolTypeVersion === 2)
+              // (pool.poolType === 'Weighted' && pool.poolTypeVersion === 3) // Hung added
             ) {
               if (!token.isExemptFromYieldProtocolFee) {
                 subApr =
@@ -236,10 +238,20 @@ export class PoolApr {
 
     // Data resolving
     const gauge = await this.liquidityGauges.findBy('poolId', pool.id);
+    // if (
+    //   !gauge ||
+    //   (pool.chainId == 1 && gauge.workingSupply == 0) ||
+    //   (pool.chainId > 1 && gauge.totalSupply == 0)
+    // ) {
+    //   return 0;
+    // }
+
+    // Hung
     if (
       !gauge ||
-      (pool.chainId == 1 && gauge.workingSupply == 0) ||
-      (pool.chainId > 1 && gauge.totalSupply == 0)
+      ((pool.chainId == 1 || pool.chainId == 16116) &&
+        gauge.workingSupply == 0) ||
+      (pool.chainId != 16116 && pool.chainId > 1 && gauge.totalSupply == 0)
     ) {
       return 0;
     }
@@ -262,21 +274,24 @@ export class PoolApr {
     const balPriceUsd = parseFloat(balPrice.usd);
 
     // Subgraph is returning BAL staking rewards as reward tokens for L2 gauges.
-    if (pool.chainId > 1) {
-      if (!gauge.rewardTokens) {
-        return 0;
-      }
 
-      const balReward = bal && gauge.rewardTokens[bal];
-      if (balReward) {
-        const reward = await this.rewardTokenApr(bal, balReward);
-        const totalSupplyUsd = gauge.totalSupply * bptPriceUsd;
-        const rewardValue = reward.value / totalSupplyUsd;
-        return Math.round(10000 * rewardValue);
-      } else {
-        return 0;
-      }
-    }
+    // Hung: Disable L2
+
+    // if (pool.chainId > 1 && pool.chainId != 16116) {
+    //   if (!gauge.rewardTokens) {
+    //     return 0;
+    //   }
+
+    //   const balReward = bal && gauge.rewardTokens[bal];
+    //   if (balReward) {
+    //     const reward = await this.rewardTokenApr(bal, balReward);
+    //     const totalSupplyUsd = gauge.totalSupply * bptPriceUsd;
+    //     const rewardValue = reward.value / totalSupplyUsd;
+    //     return Math.round(10000 * rewardValue);
+    //   } else {
+    //     return 0;
+    //   }
+    // }
 
     const now = Math.round(new Date().getTime() / 1000);
     const totalBalEmissions = (emissions.weekly(now) / 7) * 365;
@@ -357,8 +372,12 @@ export class PoolApr {
    * @returns accrued protocol revenue as APR [bsp]
    */
   async protocolApr(pool: Pool): Promise<number> {
+    // const veBalPoolId =
+    //   '0x5c6ee304399dbdb9c8ef030ab642b10820db8f56000200000000000000000014';
+
+    // Hung
     const veBalPoolId =
-      '0x5c6ee304399dbdb9c8ef030ab642b10820db8f56000200000000000000000014';
+      '0x8ea93dfbe0c02aafdc8a9e6bfdd7efacdac8cca6000200000000000000000000';
 
     if (pool.id != veBalPoolId || !this.feeDistributor) {
       return 0;

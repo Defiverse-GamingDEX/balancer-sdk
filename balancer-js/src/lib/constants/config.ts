@@ -312,6 +312,8 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
         multicall: '0xDD99819dDB53fFcc9FF77d8Cda4553b17D27b9a4', // NEED CONFIRM
         relayerV4: '0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2', // NEED CONFIRM
         gaugeController: '0x782896795C815d833D1d25C9cAf418AeE57Aa011',
+        feeDistributor: '0x6154359768818814bfceA0b4f4f8b0780AFa0dF4',
+        protocolFeePercentagesProvider: '0x2B6f869EC28eC0c5770f2af49Eb19DDdb45043BC',
         veBal: '0x2600f00FB8E1182B1bC101D27682EC7AB7B3BB30',
         veBalProxy: '0x72437aAdcB3a28487E4d4975F4dE46ABdb946B32',
         balancerHelpers: '0x3489417a49Bd0A8420A65B6E1F297C2144E7eE0a',
@@ -321,6 +323,8 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
       },
       tokens: {
         wrappedNativeAsset: '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980',
+        bal: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
+        veBal: '0x2600f00FB8E1182B1bC101D27682EC7AB7B3BB30',
       },
     },
     urls: {

@@ -87,7 +87,9 @@ export class LiquidityGaugesMulticallRepository {
     gaugeAddresses: string[]
   ): Promise<{ [gaugeAddress: string]: number }> {
     let rewardCounts;
-    if (this.chainId == 1) {
+    //if (this.chainId == 1) {
+    // Hung fix APR
+    if (this.chainId == 1 || this.chainId == 16116) {
       const payload = gaugeAddresses.map((gaugeAddress) => [
         gaugeAddress,
         liquidityGaugeV5Interface.encodeFunctionData('reward_count', []),

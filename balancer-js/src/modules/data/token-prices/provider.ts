@@ -14,7 +14,7 @@ export class TokenPriceProvider implements Findable<Price> {
       try {
         price = await this.coingeckoRepository.find(address);
         if (!price?.usd) {
-          throw new Error('Price not found');
+          throw new Error(`Price not found:${address}`);
         }
       } catch (err) {
         console.error(`Coingecko API error: ${err}`);

@@ -28,7 +28,8 @@ export class GaugeControllerMulticallRepository {
       this.gaugeControllerAddress,
       gaugeControllerInterface.encodeFunctionData('gauge_relative_weight', [
         getAddress(gaugeAddress),
-        timestamp || Math.floor(Date.now() / 1000),
+        1688625368 // Hung change, remove later
+        //timestamp || Math.floor(Date.now() / 1000),
       ]),
     ]);
     const [, res] = await this.multicall.aggregate(payload);

@@ -31,7 +31,8 @@ export type Block_Height = {
 export enum Chain {
   Arbitrum = 'Arbitrum',
   Optimism = 'Optimism',
-  Polygon = 'Polygon'
+  Polygon = 'Polygon',
+  Defiverse = 'Defiverse'
 }
 
 export type Gauge = {

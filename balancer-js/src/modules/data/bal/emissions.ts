@@ -9,7 +9,10 @@
  */
 
 export const INITIAL_RATE = 145000;
-export const START_EPOCH_TIME = 1648465251;
+//export const START_EPOCH_TIME = 1648465251; // Ethereum
+
+export const START_EPOCH_TIME = 1685601368; // Defiverse
+
 const RATE_REDUCTION_TIME = 365 * 86400;
 const RATE_REDUCTION_COEFFICIENT = 2 ** (1 / 4);
 
