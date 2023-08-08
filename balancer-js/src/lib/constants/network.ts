@@ -10,4 +10,5 @@ export enum Network {
   POLYGON = 137,
   ARBITRUM = 42161,
   DEFIVERSE = 16116,
+  DEFIVERSE_TESTNET = 17117,
 }
