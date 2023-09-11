@@ -341,38 +341,38 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
     ],
   },
   [Network.DEFIVERSE_TESTNET]: {
-    chainId: Network.DEFIVERSE_TESTNET, //16116
+    chainId: Network.DEFIVERSE_TESTNET, //17117
     addresses: {
       contracts: {
-        vault: '0xef570b45a20e9bDe7855BDF5940Be3ac17B4c610',
-        multicall: '0xDD99819dDB53fFcc9FF77d8Cda4553b17D27b9a4', // NEED CONFIRM
+        vault: '0x3fb170D197FFA0e79F758d0730efaC41807E4852',
+        multicall: '0xEB47269E97EeDB20EF782EB8caFb09ed55b02A39', // NEED CONFIRM
         relayerV4: '0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2', // NEED CONFIRM
-        gaugeController: '0x782896795C815d833D1d25C9cAf418AeE57Aa011',
-        feeDistributor: '0x6154359768818814bfceA0b4f4f8b0780AFa0dF4',
-        protocolFeePercentagesProvider: '0x2B6f869EC28eC0c5770f2af49Eb19DDdb45043BC',
-        veBal: '0x2600f00FB8E1182B1bC101D27682EC7AB7B3BB30',
-        veBalProxy: '0x72437aAdcB3a28487E4d4975F4dE46ABdb946B32',
-        balancerHelpers: '0x3489417a49Bd0A8420A65B6E1F297C2144E7eE0a',
-        weightedPoolFactory: '0x8c96Ab92be9a17F6DB66bB254c31DD0C263eA81A',
+        gaugeController: '0xF6Fe333ed12292002566d949eB3ee3fDAF400214',
+        feeDistributor: '',
+        protocolFeePercentagesProvider: '0xD2DbD304b64eC57df415E399DF4dC8bB81D0C2A5',
+        veBal: '0xd6E13E4670864b084F589927453461303F8286B9',
+        veBalProxy: '0x9D43B0b265Bfd6E8fa7D3597D40127e6f0FD4EF3',
+        balancerHelpers: '0xe24d58aBBB7b7D600ef44A3C22bdEE9e5D09f367',
+        weightedPoolFactory: '0x44260fC3bdEB0cc16646D04cE93780E0fF40Bf60',
         composableStablePoolFactory:
-          '0x42DD917a3C8A14a766712Fabe7B048f0306246F6',
+          '0x2d9E1970f6E3801E6808ad9d15DACdc3fe34CC4f',
       },
       tokens: {
-        wrappedNativeAsset: '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980',
-        bal: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
-        veBal: '0x2600f00FB8E1182B1bC101D27682EC7AB7B3BB30',
+        wrappedNativeAsset: '0x6B382742b07AAbBA58c38d792B5d7CBAaB246e99',
+        bal: '0x54CA0c47Dd122e6189c7ed11a6258B8a700A5A4E',
+        veBal: '0xd6E13E4670864b084F589927453461303F8286B9',
       },
     },
     urls: {
       subgraph:
-        'https://graphnode.defiverse.net/subgraphs/name/balancer-labs/defiverse',
-      gaugesSubgraph: 'https://graphnode.defiverse.net/subgraphs/name/balancer-labs/gauges-defiverse',
+        'https://graphnode-testnet.defiverse.net/subgraphs/name/balancer-labs/defiverse-testnet',
+      gaugesSubgraph: 'https://graphnode-testnet.defiverse.net/subgraphs/name/balancer-labs/gauges-defiverse-testnet',
     },
     pools: {},
     sorConnectingTokens: [
       {
         symbol: 'weth',
-        address: '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980',
+        address: '0x6B382742b07AAbBA58c38d792B5d7CBAaB246e99',
       },
     ],
   },

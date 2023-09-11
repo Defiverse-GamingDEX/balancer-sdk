@@ -221,6 +221,40 @@ export const TOKENS_DEFIVERSE: TokenConstants = {
   },
 };
 
+export const TOKENS_DEFIVERSE_TESTNET: TokenConstants = {
+  Popular: {
+    Symbols: ['DFV', 'BAL', 'WETH', 'OAS'],
+  },
+  Addresses: {
+    nativeAsset: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // need CONFIRM
+    wNativeAsset: '0x6B382742b07AAbBA58c38d792B5d7CBAaB246e99', // need CONFIRM
+    WETH: '0x6B382742b07AAbBA58c38d792B5d7CBAaB246e99',
+    BAL: '0x54CA0c47Dd122e6189c7ed11a6258B8a700A5A4E',
+    DFV: '0x54CA0c47Dd122e6189c7ed11a6258B8a700A5A4E', 
+  },
+  PriceChainMap: {
+    // woas
+    '0x6b382742b07aabba58c38d792b5d7cbaab246e99':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    // oas
+    '0xdeaddeaddeaddeaddeaddeaddeaddeaddead0000':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    // dfv
+    '0x54ca0c47dd122e6189c7ed11a6258b8a700a5a4e':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    // gma
+    '0x167f2a85d015c6c7a06ca65230ffaf22d1dcea9f':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    // gmb
+    '0xbdfd38435cf396083cfbf913a8a49284de70bf6b':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+
+    // veDFV    
+    '0xd6e13e4670864b084f589927453461303f8286b9':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+  },
+};
+
 export const TOKENS_MAP = {
   [Network.KOVAN]: TOKENS_KOVAN,
   [Network.GOERLI]: TOKENS_GOERLI,
@@ -229,6 +263,7 @@ export const TOKENS_MAP = {
   [Network.ARBITRUM]: TOKENS_ARBITRUM,
   [Network.GNOSIS]: TOKENS_GNOSIS,
   [Network.DEFIVERSE]: TOKENS_DEFIVERSE,
+  [Network.DEFIVERSE_TESTNET]: TOKENS_DEFIVERSE_TESTNET,
 };
 
 export function TOKENS(networkId: Network): TokenConstants {

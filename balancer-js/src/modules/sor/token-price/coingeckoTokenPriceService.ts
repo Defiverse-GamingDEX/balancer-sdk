@@ -50,6 +50,8 @@ export class CoingeckoTokenPriceService implements TokenPriceService {
         return 'xdai';
       case 16116:
         return 'ethereum';
+      case 17117:
+          return 'ethereum';
     }
 
     return '3';
@@ -69,6 +71,8 @@ export class CoingeckoTokenPriceService implements TokenPriceService {
         return 'xdai';
       case 16116:
         return 'eth';
+      case 17117:
+          return 'eth';
     }
 
     return '';

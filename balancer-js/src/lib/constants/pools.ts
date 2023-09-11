@@ -727,6 +727,54 @@ const POOLS_DEFIVERSE: Pools = {
   Metadata: {},
 };
 
+const POOLS_DEFIVERSE_TESTNET: Pools = {
+  IdsMap: {
+    veBAL: '0xb2bcca122a7176ff0be33669952d91e5b0a68ed1000200000000000000000001',
+  },
+  Pagination: {
+    PerPage: 10,
+    PerPool: 10,
+    PerPoolInitial: 5,
+  },
+  DelegateOwner: '0xba1ba1ba1ba1ba1ba1ba1ba1ba1ba1ba1ba1ba1b',
+  ZeroAddress: '0x0000000000000000000000000000000000000000',
+  DynamicFees: {
+    Gauntlet: [],
+  },
+  BlockList: [''],
+  ExcludedPoolTypes: [
+    'Element',
+    'AaveLinear',
+    'EulerLinear',
+    'Linear',
+    'ERC4626Linear',
+    'FX',
+    'Gyro2',
+    'Gyro3',
+    'GyroE',
+    'HighAmpComposableStable',
+  ],
+  Stable: {
+    AllowList: [
+      // '0xfedb19ec000d38d92af4b21436870f115db22725000000000000000000000010', // bb-ag-usd
+    ],
+  },
+  Investment: {
+    AllowList: [],
+  },
+  Factories: {
+    '0x2d9e1970f6e3801e6808ad9d15dacdc3fe34cc4f': 'composableStablePool', // ComposableStable V2
+    '0x44260fc3bdeb0cc16646d04ce93780e0ff40bf60': 'weightedPool', // WeightedPool V3
+  },
+  Stakable: {
+    AllowList: [
+      '0x1c5c0bc1833e78d0e73ffedc319eae2e00e3a614000200000000000000000000',      
+      '0xe11ca3320a633250334baa258bc94f7619aa8ce1000200000000000000000002',
+    ],
+  },
+  Metadata: {},
+};
+
 const POOLS_MAP = {
   [Network.KOVAN]: POOLS_KOVAN,
   [Network.GOERLI]: POOLS_GOERLI,
@@ -735,6 +783,7 @@ const POOLS_MAP = {
   [Network.ARBITRUM]: POOLS_ARBITRUM,
   [Network.GNOSIS]: POOLS_GNOSIS,
   [Network.DEFIVERSE]: POOLS_DEFIVERSE,
+  [Network.DEFIVERSE_TESTNET]: POOLS_DEFIVERSE_TESTNET,
 };
 
 export function POOLS(networkId: Network): Pools {

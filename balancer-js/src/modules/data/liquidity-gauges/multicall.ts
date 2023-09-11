@@ -89,7 +89,7 @@ export class LiquidityGaugesMulticallRepository {
     let rewardCounts;
     //if (this.chainId == 1) {
     // Hung fix APR
-    if (this.chainId == 1 || this.chainId == 16116) {
+    if (this.chainId == 1 || this.chainId == 16116 || this.chainId == 17117) {
       const payload = gaugeAddresses.map((gaugeAddress) => [
         gaugeAddress,
         liquidityGaugeV5Interface.encodeFunctionData('reward_count', []),

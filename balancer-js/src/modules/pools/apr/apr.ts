@@ -249,9 +249,9 @@ export class PoolApr {
     // Hung
     if (
       !gauge ||
-      ((pool.chainId == 1 || pool.chainId == 16116) &&
+      ((pool.chainId == 1 || pool.chainId == 16116 || pool.chainId == 17117) &&
         gauge.workingSupply == 0) ||
-      (pool.chainId != 16116 && pool.chainId > 1 && gauge.totalSupply == 0)
+      (pool.chainId != 16116 && pool.chainId != 17117 && pool.chainId > 1 && gauge.totalSupply == 0)
     ) {
       return 0;
     }
