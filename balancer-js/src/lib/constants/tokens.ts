@@ -230,7 +230,7 @@ export const TOKENS_DEFIVERSE_TESTNET: TokenConstants = {
     wNativeAsset: '0x6B382742b07AAbBA58c38d792B5d7CBAaB246e99', // need CONFIRM
     WETH: '0x6B382742b07AAbBA58c38d792B5d7CBAaB246e99',
     BAL: '0x54CA0c47Dd122e6189c7ed11a6258B8a700A5A4E',
-    DFV: '0x54CA0c47Dd122e6189c7ed11a6258B8a700A5A4E', 
+    DFV: '0x54CA0c47Dd122e6189c7ed11a6258B8a700A5A4E',
   },
   PriceChainMap: {
     // woas
@@ -249,7 +249,15 @@ export const TOKENS_DEFIVERSE_TESTNET: TokenConstants = {
     '0xbdfd38435cf396083cfbf913a8a49284de70bf6b':
       '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
 
-    // veDFV    
+    // CCP
+    '0x3fde6489aa398bcddab46f971e4bb5364cccd78b':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+
+    // USDC
+    '0xe5897aa3d9ea01d055e5c928bd0f6ef5778536c3':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+
+    // veDFV
     '0xd6e13e4670864b084f589927453461303f8286b9':
       '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
   },
