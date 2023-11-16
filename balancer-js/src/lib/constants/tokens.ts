@@ -218,6 +218,27 @@ export const TOKENS_DEFIVERSE: TokenConstants = {
       '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
     '0xd92e2e3c13c3712af12e4389ee37b67021318812':
       '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+
+    '0x90d8673a62a663c7c39170f64f26b903affcbaff':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    '0x72bab75be4f5252d0a6e9e3e9ac86210a346d10f':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    '0xdc3d8ff59a01957d1228988c64859d4a5c2ad4e2':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    '0x70c7aa9f37c8a4d3890fb10171ea34ffb3573293':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    '0x6f4ed22ecd49aaaf3cfb73fb5361fd5a1440c9a5':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    '0xabd241744d87236ccad73a3eec128d30c0c8855d':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    '0x872ba06f6f9878d31488680e937a910925ac729d':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    '0x7ad0039b55b48a70049a0320fd0fc4a3e496e944':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+
+    // BetaCCP
+    '0x5c153f6734781849d21eefe4f84a8c8872630e13':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
   },
 };
 
@@ -229,8 +250,8 @@ export const TOKENS_DEFIVERSE_TESTNET: TokenConstants = {
     nativeAsset: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // need CONFIRM
     wNativeAsset: '0x6B382742b07AAbBA58c38d792B5d7CBAaB246e99', // need CONFIRM
     WETH: '0x6B382742b07AAbBA58c38d792B5d7CBAaB246e99',
-    BAL: '0x54CA0c47Dd122e6189c7ed11a6258B8a700A5A4E',
-    DFV: '0x54CA0c47Dd122e6189c7ed11a6258B8a700A5A4E',
+    BAL: '0x4E7b1B5b8F8A4DFd920f88a7307b72a76f6Ae587',
+    DFV: '0x4E7b1B5b8F8A4DFd920f88a7307b72a76f6Ae587',
   },
   PriceChainMap: {
     // woas
@@ -259,6 +280,28 @@ export const TOKENS_DEFIVERSE_TESTNET: TokenConstants = {
 
     // veDFV
     '0xd6e13e4670864b084f589927453461303f8286b9':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+
+    '0xb2215b7855e4ea1c078f1d235397c7cc32e0bda2':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    '0x668b5cf2f13ae8bfb5619e48f2091040b6985d5c':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    '0x19f01c4794599b36541b6f1f45db1d0bb7f52ff7':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    '0x9c9a2a20e96eaae6df4ae3c7d8cd1a65fe7d0f18':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    '0x66b8e41f428a9a7dbc7595b11d54462be1a454cb':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    '0xda615b699920f07474a12168282df3ac229a8e1e':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    '0x99b88cbf947ce0d75da00f271e52eb82ebfa68dd':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    '0xfd470a998604e81048c9f1d2065b6c794359c033':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    '0x4e7b1b5b8f8a4dfd920f88a7307b72a76f6ae587':
+      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+
+    '0x4E7b1B5b8F8A4DFd920f88a7307b72a76f6Ae587':
       '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
   },
 };

@@ -346,24 +346,24 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
     chainId: Network.DEFIVERSE_TESTNET, //17117
     addresses: {
       contracts: {
-        vault: '0x3fb170D197FFA0e79F758d0730efaC41807E4852',
+        vault: '0xa6935aBb1D57e8BA6fa2663f9d067777CA712ECd',
         multicall: '0xEB47269E97EeDB20EF782EB8caFb09ed55b02A39', // NEED CONFIRM
         relayerV4: '0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2', // NEED CONFIRM
-        gaugeController: '0xF6Fe333ed12292002566d949eB3ee3fDAF400214',
-        feeDistributor: '0xF4a7C32F9C826A7686aCc30370a114D4798fF190',
+        gaugeController: '0x563eB2A931730C7553b04eaE00739ECC87d4edb3',
+        feeDistributor: '0xeFA5659B7fa7E3C6C9D9D34402a56feBe46C0A59',
         protocolFeePercentagesProvider:
-          '0xD2DbD304b64eC57df415E399DF4dC8bB81D0C2A5',
-        veBal: '0xd6E13E4670864b084F589927453461303F8286B9',
-        veBalProxy: '0x9D43B0b265Bfd6E8fa7D3597D40127e6f0FD4EF3',
-        balancerHelpers: '0xe24d58aBBB7b7D600ef44A3C22bdEE9e5D09f367',
-        weightedPoolFactory: '0x44260fC3bdEB0cc16646D04cE93780E0fF40Bf60',
+          '0xf716661A1CC59135D1F54292EA9a8aa3fEEEFc60',
+        veBal: '0xB6174344F2Ae206b786A1d9F4dfF4c8128414e83',
+        veBalProxy: '0xC93bD2b954D4C8E75D48D40a2d8126e27fDB8A94',
+        balancerHelpers: '0xbd2158fe57F3f51783b4B51097dd427D20DC9d2A',
+        weightedPoolFactory: '0xA557d50933deAA3F9b0bbAe1b7eF40D889434EB2',
         composableStablePoolFactory:
-          '0x2d9E1970f6E3801E6808ad9d15DACdc3fe34CC4f',
+          '0x5Fb8142cF2D5283D56241bdfB676e05A6AF99724',
       },
       tokens: {
         wrappedNativeAsset: '0x6B382742b07AAbBA58c38d792B5d7CBAaB246e99',
-        bal: '0x54CA0c47Dd122e6189c7ed11a6258B8a700A5A4E',
-        veBal: '0xd6E13E4670864b084F589927453461303F8286B9',
+        bal: '0x4E7b1B5b8F8A4DFd920f88a7307b72a76f6Ae587',
+        veBal: '0xB6174344F2Ae206b786A1d9F4dfF4c8128414e83',
       },
     },
     urls: {
