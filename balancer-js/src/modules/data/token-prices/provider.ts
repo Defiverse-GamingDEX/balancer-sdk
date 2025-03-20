@@ -9,6 +9,22 @@ export class TokenPriceProvider implements Findable<Price> {
   ) {}
 
   async find(address: string): Promise<Price | undefined> {
+    // let price;
+    // try {
+    //   try {
+    //     price = await this.coingeckoRepository.find(address);
+    //     if (!price?.usd) {
+    //       throw new Error(`Price not found:${address}`);
+    //     }
+    //   } catch (err) {
+    //     console.error(`Coingecko API error: ${err}`);
+    //     price = await this.subgraphRepository.find(address);
+    //   }
+    // } catch (err) {
+    //   console.error(err);
+    // }
+
+    // Hung
     let price;
     try {
       try {
@@ -17,12 +33,13 @@ export class TokenPriceProvider implements Findable<Price> {
           throw new Error(`Price not found:${address}`);
         }
       } catch (err) {
-        console.error(`Coingecko API error: ${err}`);
+        console.error(`Coingecko API error: ${address} ${err}`);
         price = await this.subgraphRepository.find(address);
       }
     } catch (err) {
       console.error(err);
     }
+
     const rate = (await this.aaveRates.getRate(address)) || 1;
     if (price && price.usd) {
       return {

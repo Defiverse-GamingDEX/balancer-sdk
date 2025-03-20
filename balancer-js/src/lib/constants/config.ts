@@ -1,8 +1,9 @@
 import { Network } from './network';
 import { BalancerNetworkConfig } from '@/types';
 
-//export const balancerVault = '0xBA12222222228d8Ba445958a75a0704d566BF2C8';
-export const balancerVault = '0xef570b45a20e9bDe7855BDF5940Be3ac17B4c610';
+// export const balancerVault = '0xBA12222222228d8Ba445958a75a0704d566BF2C8';
+// export const balancerVault = '0xef570b45a20e9bDe7855BDF5940Be3ac17B4c610';
+export const balancerVault = '0x2FA699664752B34E90A414A42D62D7A8b2702B85';
 
 export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
   [Network.MAINNET]: {
@@ -308,27 +309,29 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
     chainId: Network.DEFIVERSE, //16116
     addresses: {
       contracts: {
-        vault: '0xef570b45a20e9bDe7855BDF5940Be3ac17B4c610',
-        multicall: '0xDD99819dDB53fFcc9FF77d8Cda4553b17D27b9a4', // NEED CONFIRM
+        vault: '0x2FA699664752B34E90A414A42D62D7A8b2702B85',
+        multicall: '0x8633dD7223f76c99bdc5a2D116FCF369d79852C4', // NEED CONFIRM
         relayerV4: '0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2', // NEED CONFIRM
-        gaugeController: '0x782896795C815d833D1d25C9cAf418AeE57Aa011',
-        feeDistributor: '0x6154359768818814bfceA0b4f4f8b0780AFa0dF4',
+        gaugeController: '',
+        feeDistributor: '',
         protocolFeePercentagesProvider:
-          '0x2B6f869EC28eC0c5770f2af49Eb19DDdb45043BC',
-        veBal: '0x2600f00FB8E1182B1bC101D27682EC7AB7B3BB30',
-        veBalProxy: '0x72437aAdcB3a28487E4d4975F4dE46ABdb946B32',
-        balancerHelpers: '0x3489417a49Bd0A8420A65B6E1F297C2144E7eE0a',
-        weightedPoolFactory: '0x8c96Ab92be9a17F6DB66bB254c31DD0C263eA81A',
+          '0xC462175C87672c7aad536c1248b72B1Cf46BEe27',
+        veBal: '',
+        veBalProxy: '',
+        balancerHelpers: '0x4087EDb699803608A0214FD92e32119CAF57EcA3',
+        //weightedPoolFactory: '0xE952b0409e6768E270A671ebbC5b8605a7C5A0B8',
+        weightedPoolFactory: '0xD1920DD25e4998B0d7cC8de7F12BeAf9796C7475', // 2025-02-04
         composableStablePoolFactory:
-          '0x42DD917a3C8A14a766712Fabe7B048f0306246F6',
+          '0xD01ad3085fb3e1fbB2541b5B3326B1F47B189747',
       },
       tokens: {
-        wrappedNativeAsset: '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980',
+        wrappedNativeAsset: '0x5a89E11Cb554E00c2f51C4bb7F05bc7Ab0Fa6351',
         bal: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
-        veBal: '0x2600f00FB8E1182B1bC101D27682EC7AB7B3BB30',
+        veBal: '',
       },
     },
     urls: {
+      priceUrl: 'https://price-api.gaming-dex.com/api/v1',
       subgraph:
         'https://graphnode.defi-verse.org/subgraphs/name/balancer-labs/defiverse',
       gaugesSubgraph:
@@ -338,7 +341,7 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
     sorConnectingTokens: [
       {
         symbol: 'weth',
-        address: '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980',
+        address: '0x5a89E11Cb554E00c2f51C4bb7F05bc7Ab0Fa6351',
       },
     ],
   },
@@ -346,37 +349,119 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
     chainId: Network.DEFIVERSE_TESTNET, //17117
     addresses: {
       contracts: {
-        vault: '0xa6935aBb1D57e8BA6fa2663f9d067777CA712ECd',
+        vault: '0x2Da016a77E290fb82F5af7051198304d57779f5d',
         multicall: '0xEB47269E97EeDB20EF782EB8caFb09ed55b02A39', // NEED CONFIRM
         relayerV4: '0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2', // NEED CONFIRM
-        gaugeController: '0x563eB2A931730C7553b04eaE00739ECC87d4edb3',
-        feeDistributor: '0xeFA5659B7fa7E3C6C9D9D34402a56feBe46C0A59',
+        gaugeController: '0x2465Ba80F58F53090953D552EFa81621a2773885',
+        feeDistributor: '0xb09CA435d40552573f36F171c7f43c91CD1fA7cE',
         protocolFeePercentagesProvider:
-          '0xf716661A1CC59135D1F54292EA9a8aa3fEEEFc60',
-        veBal: '0xB6174344F2Ae206b786A1d9F4dfF4c8128414e83',
-        veBalProxy: '0xC93bD2b954D4C8E75D48D40a2d8126e27fDB8A94',
-        balancerHelpers: '0xbd2158fe57F3f51783b4B51097dd427D20DC9d2A',
-        weightedPoolFactory: '0xA557d50933deAA3F9b0bbAe1b7eF40D889434EB2',
+          '0x38d04d161247031484B31fB8403D20bed5287cf7',
+        veBal: '0xce275df7722D7359e019E91cc6662fa563780794',
+        veBalProxy: '0x9b84768990DbfcA4f5bcd7CF0567D3348836B659',
+        balancerHelpers: '0x47404b46E0340F879ECC15977Ce196458cadc2DF',
+        //weightedPoolFactory: '0xaB6BaC0f5F4C7C166C5234B528a1cD46Fbcb9F4B',
+        weightedPoolFactory: '0x48494Fa9eAd46EE8E3FcB66487a6dBBD34DcAFe3', // no admin role
         composableStablePoolFactory:
-          '0x5Fb8142cF2D5283D56241bdfB676e05A6AF99724',
+          '0x58e6F99bB65378f47A520fC9630Bd711f2cf3Dc7',
       },
       tokens: {
         wrappedNativeAsset: '0x6B382742b07AAbBA58c38d792B5d7CBAaB246e99',
-        bal: '0x4E7b1B5b8F8A4DFd920f88a7307b72a76f6Ae587',
-        veBal: '0xB6174344F2Ae206b786A1d9F4dfF4c8128414e83',
+        bal: '0xe34Eec955bF457382cE37e1D8371e559cC6518Fb',
+        veBal: '0xce275df7722D7359e019E91cc6662fa563780794',
       },
     },
     urls: {
+      priceUrl: 'https://price-api-testnet.gaming-dex.com/api/v1',
       subgraph:
-        'https://graphnode-testnet.defi-verse.org/subgraphs/name/balancer-labs/defiverse-testnet',
+        'https://graphnode-testnet.defi-verse.org/subgraphs/name/balancer-labs/defiverse-testnet-v2',
       gaugesSubgraph:
-        'https://graphnode-testnet.defi-verse.org/subgraphs/name/balancer-labs/gauges-defiverse-testnet',
+        'https://graphnode-testnet.defi-verse.org/subgraphs/name/balancer-labs/gauges-defiverse-testnet-v2',
     },
     pools: {},
     sorConnectingTokens: [
       {
         symbol: 'weth',
         address: '0x6B382742b07AAbBA58c38d792B5d7CBAaB246e99',
+      },
+    ],
+  },
+  [Network.OASYS]: {
+    chainId: Network.OASYS, //16116
+    addresses: {
+      contracts: {
+        vault: '0xfb6f8FEdE0Cb63674Ab964affB93D65a4a7D55eA',
+        multicall: '0xc52dc4a7dad06BEAB9230D482AcBEcFFc3aB009B', // NEED CONFIRM
+        relayerV4: '0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2', // NEED CONFIRM
+        gaugeController: '',
+        feeDistributor: '',
+        protocolFeePercentagesProvider:
+          '0x56C181Ecf83e773978137b2B567d660768f8c8e3',
+        veBal: '',
+        veBalProxy: '',
+        balancerHelpers: '0xf199DDb57d75225e13Fe13eb8BDDE8b16e188374',
+        // weightedPoolFactory: '0x5737600b98E7F1cf98dAca2a36bCa22C974370b0',
+        weightedPoolFactory: '0x4EF0b4827cE3D5FEcBc2C6ab80Ee81dBF9631D37', // 2025-02-04
+        composableStablePoolFactory:
+          '0x0A7A98c9553192755f22b282278f0FA26f4de742',
+      },
+      tokens: {
+        wrappedNativeAsset: '0x5200000000000000000000000000000000000001',
+        bal: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
+        veBal: '',
+      },
+    },
+    urls: {
+      priceUrl: 'https://price-api.gaming-dex.com/api/v1',
+      subgraph:
+        'https://graphnode-oasys.defi-verse.org/subgraphs/name/balancer-labs/oasys',
+      gaugesSubgraph:
+        'https://graphnode.defi-verse.org/subgraphs/name/balancer-labs/gauges-defiverse',
+    },
+    pools: {},
+    sorConnectingTokens: [
+      {
+        symbol: 'weth',
+        address: '0x5200000000000000000000000000000000000001',
+      },
+    ],
+  },
+  [Network.OASYS_TESTNET]: {
+    chainId: Network.OASYS_TESTNET, //16116
+    addresses: {
+      contracts: {
+        vault: '0x1f7a0Bea1CB70FaA0f6b7B1126eCbd01Ef4E5BC8',
+        multicall: '0xe5Fce05D922e3961F053bD2BF1F29F92d2a0a94B', // NEED CONFIRM
+        relayerV4: '0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2', // NEED CONFIRM
+        gaugeController: '',
+        feeDistributor: '',
+        protocolFeePercentagesProvider:
+          '0xE9d18Ba9Eabda95860C886C9101FAa470f43cd17',
+        veBal: '',
+        veBalProxy: '',
+        balancerHelpers: '0x3B847f3Fa5585Dc3aeDB40780fF47e31B0fF14C0',
+        // weightedPoolFactory: '0x900c1Bc6a6915Ed153c18763e4B8aE8133E839f1',
+        weightedPoolFactory: '0xd2d7F457B9749B6A0A637685A65681F03116125C', // no admin role
+        composableStablePoolFactory:
+          '0xfDA8fa80dd77A99BF71BeCFce47077859e689898',
+      },
+      tokens: {
+        wrappedNativeAsset: '0x5200000000000000000000000000000000000001',
+        bal: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
+        veBal: '',
+      },
+    },
+    urls: {
+      priceUrl: 'https://price-api.gaming-dex.com/api/v1',
+      subgraph:
+        'https://graphnode-oasys-testnet.defi-verse.org/subgraphs/name/balancer-labs/oasys-testnet',
+      gaugesSubgraph:
+        'https://graphnode-oasys-testnet.defi-verse.org/subgraphs/name/balancer-labs/gauges-defiverse',
+    },
+    pools: {},
+    sorConnectingTokens: [
+      {
+        symbol: 'weth',
+        address: '0x5200000000000000000000000000000000000001',
       },
     ],
   },

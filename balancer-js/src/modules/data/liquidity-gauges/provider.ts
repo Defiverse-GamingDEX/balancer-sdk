@@ -64,7 +64,13 @@ export class LiquidityGaugeSubgraphRPCProvider
 
     // if (this.chainId == 1) {
     // Hung fix APR
-    if (this.chainId == 1 || this.chainId == 16116 || this.chainId == 17117) {
+    if (
+      this.chainId == 1 ||
+      this.chainId == 16116 ||
+      this.chainId == 17117 ||
+      this.chainId == 248 ||
+      this.chainId == 9372 
+    ) {
       console.time('Fetching multicall.getWorkingSupplies');
       this.workingSupplies = await this.multicall.getWorkingSupplies(
         gaugeAddresses

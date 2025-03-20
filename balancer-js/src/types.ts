@@ -96,6 +96,7 @@ export interface BalancerNetworkConfig {
     subgraph: string;
     gaugesSubgraph?: string;
     blockNumberSubgraph?: string;
+    priceUrl?: string;
   };
   pools: {
     wETHwstETH?: PoolReference;
