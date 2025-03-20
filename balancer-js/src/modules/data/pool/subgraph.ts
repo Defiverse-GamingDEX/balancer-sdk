@@ -80,9 +80,9 @@ export class PoolsSubgraphRepository
         swapEnabled: {
           eq: true,
         },
-        totalShares: {
-          gt: 0.000000000001,
-        },
+        // totalShares: {
+        //   gt: 0.000000000001,
+        // },
       },
     };
 
@@ -104,7 +104,8 @@ export class PoolsSubgraphRepository
   private async fetchDefault(): Promise<Pool[]> {
     console.time('fetching pools');
     const { pool0, pool1000, pool2000 } = await this.client.AllPools({
-      where: { swapEnabled: true, totalShares_gt: '0.000000000001' },
+      //where: { swapEnabled: true, totalShares_gt: '0.000000000001' },
+      where: { swapEnabled: true },
       orderBy: Pool_OrderBy.TotalLiquidity,
       orderDirection: OrderDirection.Desc,
       block: await this.block(),

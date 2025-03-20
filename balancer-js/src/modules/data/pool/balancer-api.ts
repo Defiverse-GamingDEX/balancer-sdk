@@ -42,9 +42,9 @@ export class PoolsBalancerAPIRepository
         swapEnabled: {
           eq: true,
         },
-        totalShares: {
-          gt: 0.05,
-        },
+        //totalShares: {
+        //  gt: 0.05,          
+        //},
       },
     };
 

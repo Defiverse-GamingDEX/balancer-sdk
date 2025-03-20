@@ -678,7 +678,7 @@ const POOLS_GENERIC: Pools = {
 
 const POOLS_DEFIVERSE: Pools = {
   IdsMap: {
-    veBAL: '0x8ea93dfbe0c02aafdc8a9e6bfdd7efacdac8cca6000200000000000000000000',
+    veBAL: '',
   },
   Pagination: {
     PerPage: 10,
@@ -712,16 +712,12 @@ const POOLS_DEFIVERSE: Pools = {
     AllowList: [],
   },
   Factories: {
-    '0x42dd917a3c8a14a766712fabe7b048f0306246f6': 'composableStablePool', // ComposableStable V2
-    '0x8c96ab92be9a17f6db66bb254c31dd0c263ea81a': 'weightedPool', // WeightedPool V3
+    '0xd01ad3085fb3e1fbb2541b5b3326b1f47b189747': 'composableStablePool', // ComposableStable V2
+    '0xd1920dd25e4998b0d7cc8de7f12beaf9796c7475': 'weightedPool', // WeightedPool V3
   },
   Stakable: {
     AllowList: [
-      '0x402e0638b1d990479a2139709f984cd1ae8c6daf000200000000000000000001',
-      '0xd92e2e3c13c3712af12e4389ee37b67021318812000200000000000000000002',
-      '0x900e9ae430c8f011ab9250c9d4a3a8055ebd3bb8000200000000000000000003',
-      '0x33b2ae985ecbc95c83b8cfa2fe2f6b8042763151000200000000000000000004',
-      '0xa7b4bee4364a9c161d985ab5a4e17349c868b261000200000000000000000005',
+      //
     ],
   },
   Metadata: {},
@@ -729,7 +725,7 @@ const POOLS_DEFIVERSE: Pools = {
 
 const POOLS_DEFIVERSE_TESTNET: Pools = {
   IdsMap: {
-    veBAL: '0xb00b3ea12c3ad4f81cdf585f1ad67f6c81a5fd9c000200000000000000000000',
+    veBAL: '0xaa01a32965a072082dac7169b4c9457ce1508be5000200000000000000000001',
   },
   Pagination: {
     PerPage: 10,
@@ -757,26 +753,123 @@ const POOLS_DEFIVERSE_TESTNET: Pools = {
   Stable: {
     AllowList: [
       // '0xfedb19ec000d38d92af4b21436870f115db22725000000000000000000000010', // bb-ag-usd
-      '0x4db586b0c7f39034e6334a7d6301a2602b97650a000000000000000000000009',
+      // '0x4db586b0c7f39034e6334a7d6301a2602b97650a000000000000000000000009',
     ],
   },
   Investment: {
     AllowList: [],
   },
   Factories: {
-    '0x5fb8142cf2d5283d56241bdfb676e05a6af99724': 'composableStablePool', // ComposableStable V3
-    '0xa557d50933deaa3f9b0bbae1b7ef40d889434eb2': 'weightedPool', // WeightedPool V3
+    '0xab6bac0f5f4c7c166c5234b528a1cd46fbcb9f4b': 'weightedPool', // WeightedPool V3
+    '0x58e6f99bb65378f47a520fc9630bd711f2cf3dc7': 'composableStablePool', // ComposableStable V3
+    '0x48494fa9ead46ee8e3fcb66487a6dbbd34dcafe3': 'weightedPool', // WeightedPool V3
   },
   Stakable: {
     AllowList: [
-      '0xb14753b418b66b30afe1ff2078fac93d66fe219f000200000000000000000001',
-      '0x49ae791942ac56e66017924994df196189a5bbed000200000000000000000002',
-      '0x4cc04216f2863842e3be0fe22bb763382f26500c000200000000000000000003',
-      '0x14310f8c12b102f0c9fc699fe344cc2b59608247000200000000000000000004',
-      '0x5c4143e57a66cff930098f4699ee538870200d63000200000000000000000005',
-      '0x80246799ef36dfcb403dc10e29f0cca74350be54000200000000000000000006',
-      '0xd6f0649118b6a83344d28f798db3192e47c8494e000200000000000000000007',
-      '0x35235c062df1e4154e157413d347f4a8a4a93c09000200000000000000000008',
+      '0xe815154dc2bb9cceee8054b01e99850b2a8c0d1e000200000000000000000002',
+      '0x6797e1bc05285c51127bb9760d0a2df57bf6f0f0000200000000000000000003',
+      '0xa646c5ce02ce3e91c882d7f7180d1519a76fe588000200000000000000000004',
+      '0xbaf0f0499bc5530e2b6181e22567415f793a3d0b000200000000000000000005',
+      '0xb3a6b8f5d07bae6dd664dbdf45432f78c819ab99000200000000000000000006',
+      '0x5e71ae56c64dee14fe78e31efcf2ee95f89fac45000200000000000000000007',
+      '0x3f197d7d1ff1de36c69cea2a2ab326a01612f848000200000000000000000008',
+      '0xa85ae7f245e690ec70867248d246f60a41bace0e000200000000000000000009',
+      '0x26cdeaf40cf9a83bb7436b560d150c1d5d98b87900020000000000000000000a',
+      '0x6660752d8d3be08bf42fd0a9b14d7ff0244f37da00020000000000000000000b',
+    ],
+  },
+  Metadata: {},
+};
+
+const POOLS_OASYS: Pools = {
+  IdsMap: {
+    veBAL: '',
+  },
+  Pagination: {
+    PerPage: 10,
+    PerPool: 10,
+    PerPoolInitial: 5,
+  },
+  DelegateOwner: '0xba1ba1ba1ba1ba1ba1ba1ba1ba1ba1ba1ba1ba1b',
+  ZeroAddress: '0x0000000000000000000000000000000000000000',
+  DynamicFees: {
+    Gauntlet: [],
+  },
+  BlockList: [''],
+  ExcludedPoolTypes: [
+    'Element',
+    'AaveLinear',
+    'EulerLinear',
+    'Linear',
+    'ERC4626Linear',
+    'FX',
+    'Gyro2',
+    'Gyro3',
+    'GyroE',
+    'HighAmpComposableStable',
+  ],
+  Stable: {
+    AllowList: [
+      // '0xfedb19ec000d38d92af4b21436870f115db22725000000000000000000000010', // bb-ag-usd
+    ],
+  },
+  Investment: {
+    AllowList: [],
+  },
+  Factories: {
+    '0x061e05853fb45d3d41ec227459ec98bb25580ad3': 'composableStablePool', // ComposableStable V2
+    '0x4ef0b4827ce3d5fecbc2c6ab80ee81dbf9631d37': 'weightedPool', // WeightedPool V3
+  },
+  Stakable: {
+    AllowList: [
+      //
+    ],
+  },
+  Metadata: {},
+};
+
+const POOLS_OASYS_TESTNET: Pools = {
+  IdsMap: {
+    veBAL: '',
+  },
+  Pagination: {
+    PerPage: 10,
+    PerPool: 10,
+    PerPoolInitial: 5,
+  },
+  DelegateOwner: '0xba1ba1ba1ba1ba1ba1ba1ba1ba1ba1ba1ba1ba1b',
+  ZeroAddress: '0x0000000000000000000000000000000000000000',
+  DynamicFees: {
+    Gauntlet: [],
+  },
+  BlockList: [''],
+  ExcludedPoolTypes: [
+    'Element',
+    'AaveLinear',
+    'EulerLinear',
+    'Linear',
+    'ERC4626Linear',
+    'FX',
+    'Gyro2',
+    'Gyro3',
+    'GyroE',
+    'HighAmpComposableStable',
+  ],
+  Stable: {
+    AllowList: [
+      // '0xfedb19ec000d38d92af4b21436870f115db22725000000000000000000000010', // bb-ag-usd
+    ],
+  },
+  Investment: {
+    AllowList: [],
+  },
+  Factories: {
+    '0xfda8fa80dd77a99bf71becfce47077859e689898': 'composableStablePool', // ComposableStable V2
+    '0xd2d7f457b9749b6a0a637685a65681f03116125c': 'weightedPool', // WeightedPool V3
+  },
+  Stakable: {
+    AllowList: [
+      //
     ],
   },
   Metadata: {},
@@ -791,6 +884,8 @@ const POOLS_MAP = {
   [Network.GNOSIS]: POOLS_GNOSIS,
   [Network.DEFIVERSE]: POOLS_DEFIVERSE,
   [Network.DEFIVERSE_TESTNET]: POOLS_DEFIVERSE_TESTNET,
+  [Network.OASYS]: POOLS_OASYS,
+  [Network.OASYS_TESTNET]: POOLS_OASYS_TESTNET,
 };
 
 export function POOLS(networkId: Network): Pools {

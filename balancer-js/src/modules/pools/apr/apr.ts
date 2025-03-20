@@ -249,9 +249,16 @@ export class PoolApr {
     // Hung
     if (
       !gauge ||
-      ((pool.chainId == 1 || pool.chainId == 16116 || pool.chainId == 17117) &&
+      ((pool.chainId == 1 ||
+        pool.chainId == 16116 ||
+        pool.chainId == 17117 ||
+        pool.chainId == 248) &&
         gauge.workingSupply == 0) ||
-      (pool.chainId != 16116 && pool.chainId != 17117 && pool.chainId > 1 && gauge.totalSupply == 0)
+      (pool.chainId != 248 &&
+        pool.chainId != 16116 &&
+        pool.chainId != 17117 &&
+        pool.chainId > 1 &&
+        gauge.totalSupply == 0)
     ) {
       return 0;
     }
@@ -509,7 +516,9 @@ export class PoolApr {
           decimals = rewardData.decimals;
         } else {
           const meta = await this.tokenMeta.find(tokenAddress);
-          decimals = meta?.decimals || 18;
+          if (meta && meta.decimals !== undefined) {
+            decimals = meta.decimals;
+          }
         }
         const yearlyRewardUsd =
           parseFloat(formatUnits(yearlyReward, decimals)) *

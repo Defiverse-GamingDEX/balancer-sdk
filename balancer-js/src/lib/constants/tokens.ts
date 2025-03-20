@@ -11,6 +11,7 @@ type CommonTokens = {
   bbaUSD?: string;
   bbaUSDv2?: string;
   DFV?: string;
+  GDT?: string;
 };
 
 type TokenConstants = {
@@ -182,127 +183,69 @@ export const TOKENS_GENERIC: TokenConstants = {
 
 export const TOKENS_DEFIVERSE: TokenConstants = {
   Popular: {
-    Symbols: ['DFV', 'BAL', 'WETH', 'DAI', 'USDC', 'USDT'],
+    Symbols: ['GDT', 'BAL', 'WETH', 'OAS'],
   },
   Addresses: {
     nativeAsset: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // need CONFIRM
-    wNativeAsset: '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980', // need CONFIRM
-    WETH: '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980',
+    wNativeAsset: '0x5a89E11Cb554E00c2f51C4bb7F05bc7Ab0Fa6351', // need CONFIRM
+    WETH: '0x5a89E11Cb554E00c2f51C4bb7F05bc7Ab0Fa6351',
     BAL: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
-    DFV: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
+    GDT: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
   },
   PriceChainMap: {
-    '0xeb7638a7c4eaeb25ece59f4382b9f06a8056f980':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0x62400c6b2685599d1c1308a72c4cb2f6b86b4867':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0x738cb40a7cfcd770b9972f3e992811c08613f38d':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    // usdc
-    '0x8299f293ea0de5eda67ed75aad6e9c4a2b063837':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    // oas
-    '0x7914aa2d50cc4e9b5a6fb6ac58ec7095927b8897':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    // dfv
-    '0xa3496414a9900a9ae5960c1fec30e563213b68be':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    '0x5a89e11cb554e00c2f51c4bb7f05bc7ab0fa6351':
+      '0x5a89e11cb554e00c2f51c4bb7f05bc7ab0fa6351', // USDC
 
-    '0x43831636c9cec4c9c9a950b588ac8ec971588754':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0xcc90040a931a8147cc2a4411c68348a5a3a363a0':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0x2600f00fb8e1182b1bc101d27682ec7ab7b3bb30':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0x900e9ae430c8f011ab9250c9d4a3a8055ebd3bb8':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0xd92e2e3c13c3712af12e4389ee37b67021318812':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-
-    '0x90d8673a62a663c7c39170f64f26b903affcbaff':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0x72bab75be4f5252d0a6e9e3e9ac86210a346d10f':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0xdc3d8ff59a01957d1228988c64859d4a5c2ad4e2':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0x70c7aa9f37c8a4d3890fb10171ea34ffb3573293':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0x6f4ed22ecd49aaaf3cfb73fb5361fd5a1440c9a5':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0xabd241744d87236ccad73a3eec128d30c0c8855d':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0x872ba06f6f9878d31488680e937a910925ac729d':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0x7ad0039b55b48a70049a0320fd0fc4a3e496e944':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-
-    // BetaCCP
-    '0x5c153f6734781849d21eefe4f84a8c8872630e13':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    '0x7c6b91d9be155a6db01f749217d76ff02a7227f2':
+      '0x7c6b91d9be155a6db01f749217d76ff02a7227f2', // USDC
   },
 };
 
 export const TOKENS_DEFIVERSE_TESTNET: TokenConstants = {
   Popular: {
-    Symbols: ['DFV', 'BAL', 'WETH', 'OAS'],
+    Symbols: ['GDT', 'BAL', 'WETH', 'OAS'],
   },
   Addresses: {
     nativeAsset: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // need CONFIRM
     wNativeAsset: '0x6B382742b07AAbBA58c38d792B5d7CBAaB246e99', // need CONFIRM
     WETH: '0x6B382742b07AAbBA58c38d792B5d7CBAaB246e99',
-    BAL: '0x4E7b1B5b8F8A4DFd920f88a7307b72a76f6Ae587',
-    DFV: '0x4E7b1B5b8F8A4DFd920f88a7307b72a76f6Ae587',
+    BAL: '0xe34Eec955bF457382cE37e1D8371e559cC6518Fb',
+    GDT: '0xe34Eec955bF457382cE37e1D8371e559cC6518Fb',
+  },
+  PriceChainMap: {},
+};
+
+export const TOKENS_OASYS: TokenConstants = {
+  Popular: {
+    Symbols: ['GDT', 'BAL', 'WETH', 'OAS'],
+  },
+  Addresses: {
+    nativeAsset: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // need CONFIRM
+    wNativeAsset: '0x5200000000000000000000000000000000000001', // need CONFIRM
+    WETH: '0x5200000000000000000000000000000000000001',
+    BAL: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
+    GDT: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
   },
   PriceChainMap: {
-    // woas
-    '0x6b382742b07aabba58c38d792b5d7cbaab246e99':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    // oas
-    '0xdeaddeaddeaddeaddeaddeaddeaddeaddead0000':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    // dfv
-    '0x54ca0c47dd122e6189c7ed11a6258b8a700a5a4e':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    // gma
-    '0x167f2a85d015c6c7a06ca65230ffaf22d1dcea9f':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    // gmb
-    '0xbdfd38435cf396083cfbf913a8a49284de70bf6b':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+    '0x5200000000000000000000000000000000000001':
+      '0x5a89e11cb554e00c2f51c4bb7f05bc7ab0fa6351', // USDC
+  },
+};
 
-    // CCP
-    '0x3fde6489aa398bcddab46f971e4bb5364cccd78b':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-
-    // USDC
-    '0xe5897aa3d9ea01d055e5c928bd0f6ef5778536c3':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-
-    // veDFV
-    '0xd6e13e4670864b084f589927453461303f8286b9':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-
-    '0xb2215b7855e4ea1c078f1d235397c7cc32e0bda2':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0x668b5cf2f13ae8bfb5619e48f2091040b6985d5c':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0x19f01c4794599b36541b6f1f45db1d0bb7f52ff7':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0x9c9a2a20e96eaae6df4ae3c7d8cd1a65fe7d0f18':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0x66b8e41f428a9a7dbc7595b11d54462be1a454cb':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0xda615b699920f07474a12168282df3ac229a8e1e':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0x99b88cbf947ce0d75da00f271e52eb82ebfa68dd':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0xfd470a998604e81048c9f1d2065b6c794359c033':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    '0x4e7b1b5b8f8a4dfd920f88a7307b72a76f6ae587':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-
-    '0x4E7b1B5b8F8A4DFd920f88a7307b72a76f6Ae587':
-      '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
+export const TOKENS_OASYS_TESTNET: TokenConstants = {
+  Popular: {
+    Symbols: ['GDT', 'BAL', 'WETH', 'OAS'],
+  },
+  Addresses: {
+    nativeAsset: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // need CONFIRM
+    wNativeAsset: '0x5200000000000000000000000000000000000001', // need CONFIRM
+    WETH: '0x5200000000000000000000000000000000000001',
+    BAL: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
+    GDT: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
+  },
+  PriceChainMap: {
+    '0x5200000000000000000000000000000000000001':
+      '0x5a89e11cb554e00c2f51c4bb7f05bc7ab0fa6351', // USDC
   },
 };
 
@@ -315,6 +258,8 @@ export const TOKENS_MAP = {
   [Network.GNOSIS]: TOKENS_GNOSIS,
   [Network.DEFIVERSE]: TOKENS_DEFIVERSE,
   [Network.DEFIVERSE_TESTNET]: TOKENS_DEFIVERSE_TESTNET,
+  [Network.OASYS]: TOKENS_OASYS,
+  [Network.OASYS_TESTNET]: TOKENS_OASYS_TESTNET,
 };
 
 export function TOKENS(networkId: Network): TokenConstants {

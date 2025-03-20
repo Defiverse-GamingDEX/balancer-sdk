@@ -107,23 +107,42 @@ export class Data implements BalancerDataRepositories {
 
     // 🚨 yesterdaysPools is used to calculate swapFees accumulated over last 24 hours
     // TODO: find a better data source for that, eg: maybe DUNE once API is available
+    // if (networkConfig.urls.blockNumberSubgraph) {
+    //   this.blockNumbers = new BlockNumberRepository(
+    //     networkConfig.urls.blockNumberSubgraph
+    //   );
+
+    //   const blockDayAgo = async () => {
+    //     if (this.blockNumbers) {
+    //       return await this.blockNumbers.find('dayAgo');
+    //     }
+    //   };
+
+    //   this.yesterdaysPools = new PoolsSubgraphRepository({
+    //     url: networkConfig.urls.subgraph,
+    //     chainId: networkConfig.chainId,
+    //     blockHeight: blockDayAgo,
+    //   });
+    // }
+
+    // Hung change
     if (networkConfig.urls.blockNumberSubgraph) {
       this.blockNumbers = new BlockNumberRepository(
         networkConfig.urls.blockNumberSubgraph
       );
-
-      const blockDayAgo = async () => {
-        if (this.blockNumbers) {
-          return await this.blockNumbers.find('dayAgo');
-        }
-      };
-
-      this.yesterdaysPools = new PoolsSubgraphRepository({
-        url: networkConfig.urls.subgraph,
-        chainId: networkConfig.chainId,
-        blockHeight: blockDayAgo,
-      });
     }
+
+    const blockDayAgo = async () => {
+      const blockPerDay = 5000;
+      const currentBlock = await provider.getBlockNumber();
+      return Number(currentBlock) - blockPerDay;
+    };
+
+    this.yesterdaysPools = new PoolsSubgraphRepository({
+      url: networkConfig.urls.subgraph,
+      chainId: networkConfig.chainId,
+      blockHeight: blockDayAgo,
+    });
 
     const tokenAddresses = initialCoingeckoList
       .filter((t) => t.chainId == networkConfig.chainId)
