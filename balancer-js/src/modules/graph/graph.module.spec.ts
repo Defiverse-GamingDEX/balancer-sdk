@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { parseFixed } from '@ethersproject/bignumber';
 import { factories } from '@/test/factories';
 import { PoolsStaticRepository } from '../data';
-import { SubgraphToken } from '@balancer-labs/sor';
+import { SubgraphToken } from '@defiverse/sor';
 import { PoolGraph, Node } from './graph';
 import {
   BoostedInfo,

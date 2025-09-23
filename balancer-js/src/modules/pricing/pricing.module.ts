@@ -5,7 +5,7 @@ import {
   ZERO,
   parseToPoolsDict,
   getSpotPriceAfterSwapForPath,
-} from '@balancer-labs/sor';
+} from '@defiverse/sor';
 import { BalancerError, BalancerErrorCode } from '@/balancerErrors';
 
 export class Pricing {

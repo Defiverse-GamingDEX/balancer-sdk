@@ -1,12 +1,12 @@
 {
   "name": "@defiverse/balancer-sdk",
-  "version": "0.1.172",
+  "version": "0.1.243",
   "description": "JavaScript SDK for interacting with the Balancer Protocol V2",
   "license": "GPL-3.0-only",
   "homepage": "https://github.com/balancer-labs/balancer-sdk#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/P2302-Oasys-Balancer/balancer-sdk",
+    "url": "git+https://github.com/P2302-Oasys-Balancer/balancer-sdk.git",
     "directory": "balancer-js"
   },
   "bugs": {
@@ -21,6 +21,7 @@
   ],
   "scripts": {
     "build": "rimraf dist && rollup -c",
+    "pub": "yarn publish --access public",
     "dev": "rollup -c -w",
     "test": "ts-mocha --paths --recursive -p tsconfig.testing.json 'src/**/*.spec.ts' --timeout 20000",
     "test:only": "ts-mocha --paths --recursive -p tsconfig.testing.json --timeout 20000",
@@ -81,7 +82,7 @@
     "typescript": "^4.0.2"
   },
   "dependencies": {
-    "@balancer-labs/sor": "4.1.1-beta.1",
+    "@defiverse/sor": "4.1.14",
     "@balancer-labs/typechain": "^1.0.0",
     "@ethersproject/abi": "^5.4.0",
     "@ethersproject/abstract-signer": "^5.4.0",

@@ -4,7 +4,7 @@ import {
   JoinPoolAttributes,
   JoinPool,
 } from '../types';
-import { StableMathBigInt } from '@balancer-labs/sor';
+import { StableMathBigInt } from '@defiverse/sor';
 import { BalancerError, BalancerErrorCode } from '@/balancerErrors';
 import { AssetHelpers, parsePoolInfo, insert } from '@/lib/utils';
 import { subSlippage } from '@/lib/utils/slippageHelper';

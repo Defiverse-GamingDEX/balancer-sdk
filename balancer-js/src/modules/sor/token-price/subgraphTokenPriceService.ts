@@ -1,4 +1,4 @@
-import { TokenPriceService } from '@balancer-labs/sor';
+import { TokenPriceService } from '@defiverse/sor';
 import { SubgraphClient } from '@/modules/subgraph/subgraph';
 import { keyBy } from 'lodash';
 

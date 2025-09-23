@@ -6,9 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import dts from 'rollup-plugin-dts';
 import pkg from './package.json';
 
-const external = [
-  ...Object.keys(pkg.dependencies)
-];
+const external = [...Object.keys(pkg.dependencies)];
 
 export default [
   {
@@ -27,7 +25,8 @@ export default [
           '@ethersproject/bytes': 'bytes',
           '@ethersproject/abstract-signer': 'abstractSigner',
           '@ethersproject/contracts': 'contracts',
-          '@balancer-labs/sor': 'sor',
+          //'@balancer-labs/sor': 'sor',
+          '@defiverse/sor': 'sor',
           '@balancer-labs/typechain': 'typechain',
           '@ethersproject/providers': 'providers',
           'graphql-request': 'graphqlRequest',
@@ -49,11 +48,11 @@ export default [
       }),
       terser({
         format: {
-          comments: false
+          comments: false,
         },
         compress: {
-          pure_funcs: ['console.log', 'console.time', 'console.timeEnd']
-        }
+          pure_funcs: ['console.log', 'console.time', 'console.timeEnd'],
+        },
       }),
     ],
     external,

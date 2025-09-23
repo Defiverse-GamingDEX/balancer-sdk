@@ -38,17 +38,22 @@ export class TokenPriceProvider implements Findable<Price> {
       }
     } catch (err) {
       console.error(err);
-    }
-
-    const rate = (await this.aaveRates.getRate(address)) || 1;
-    if (price && price.usd) {
-      return {
-        ...price,
-        usd: (parseFloat(price.usd) * rate).toString(),
+      price = {
+        eth: '0',
+        usd: '0.1',
       };
-    } else {
-      return price;
     }
+    return price;
+
+    // const rate = (await this.aaveRates.getRate(address)) || 1;
+    // if (price && price.usd) {
+    //   return {
+    //     ...price,
+    //     usd: (parseFloat(price.usd) * rate).toString(),
+    //   };
+    // } else {
+    //   return price;
+    // }
   }
 
   async findBy(attribute: string, value: string): Promise<Price | undefined> {

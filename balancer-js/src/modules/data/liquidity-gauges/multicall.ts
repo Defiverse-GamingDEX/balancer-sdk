@@ -91,8 +91,8 @@ export class LiquidityGaugesMulticallRepository {
     // Hung fix APR
     if (
       this.chainId == 1 ||
-      this.chainId == 16116 ||
-      this.chainId == 17117 ||
+      // this.chainId == 16116 ||
+      // this.chainId == 17117 ||
       this.chainId == 248 ||
       this.chainId == 9372
     ) {

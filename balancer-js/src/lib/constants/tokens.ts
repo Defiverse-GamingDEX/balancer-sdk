@@ -189,8 +189,8 @@ export const TOKENS_DEFIVERSE: TokenConstants = {
     nativeAsset: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // need CONFIRM
     wNativeAsset: '0x5a89E11Cb554E00c2f51C4bb7F05bc7Ab0Fa6351', // need CONFIRM
     WETH: '0x5a89E11Cb554E00c2f51C4bb7F05bc7Ab0Fa6351',
-    BAL: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
-    GDT: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
+    BAL: '',
+    GDT: '',
   },
   PriceChainMap: {
     '0x5a89e11cb554e00c2f51c4bb7f05bc7ab0fa6351':
@@ -203,14 +203,14 @@ export const TOKENS_DEFIVERSE: TokenConstants = {
 
 export const TOKENS_DEFIVERSE_TESTNET: TokenConstants = {
   Popular: {
-    Symbols: ['GDT', 'BAL', 'WETH', 'OAS'],
+    Symbols: ['WETH', 'OAS'],
   },
   Addresses: {
     nativeAsset: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // need CONFIRM
     wNativeAsset: '0x6B382742b07AAbBA58c38d792B5d7CBAaB246e99', // need CONFIRM
     WETH: '0x6B382742b07AAbBA58c38d792B5d7CBAaB246e99',
-    BAL: '0xe34Eec955bF457382cE37e1D8371e559cC6518Fb',
-    GDT: '0xe34Eec955bF457382cE37e1D8371e559cC6518Fb',
+    BAL: '',
+    GDT: '',
   },
   PriceChainMap: {},
 };
@@ -223,8 +223,8 @@ export const TOKENS_OASYS: TokenConstants = {
     nativeAsset: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // need CONFIRM
     wNativeAsset: '0x5200000000000000000000000000000000000001', // need CONFIRM
     WETH: '0x5200000000000000000000000000000000000001',
-    BAL: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
-    GDT: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
+    BAL: '0x2B726256AdD04e65403cEf6679A2f2dfF7DDe9F9',
+    GDT: '',
   },
   PriceChainMap: {
     '0x5200000000000000000000000000000000000001':
@@ -240,8 +240,8 @@ export const TOKENS_OASYS_TESTNET: TokenConstants = {
     nativeAsset: '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE', // need CONFIRM
     wNativeAsset: '0x5200000000000000000000000000000000000001', // need CONFIRM
     WETH: '0x5200000000000000000000000000000000000001',
-    BAL: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
-    GDT: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
+    BAL: '0x9288F664FEFc9f374A53C4307BD3c8F91e83f466',
+    GDT: '0x9288F664FEFc9f374A53C4307BD3c8F91e83f466',
   },
   PriceChainMap: {
     '0x5200000000000000000000000000000000000001':

@@ -7,6 +7,7 @@ import { Multicall } from '@/modules/contracts/implementations/multicall';
 
 const gaugeControllerInterface = new Interface([
   'function gauge_relative_weight(address gauge, uint timestamp) view returns (uint)',
+  'function gauge_relative_weight_write(address gauge, uint timestamp) returns (uint)',
 ]);
 
 export class GaugeControllerMulticallRepository {
@@ -26,11 +27,10 @@ export class GaugeControllerMulticallRepository {
   ): Promise<{ [gaugeAddress: string]: number }> {
     const payload = gaugeAddresses.map((gaugeAddress) => [
       this.gaugeControllerAddress,
-      gaugeControllerInterface.encodeFunctionData('gauge_relative_weight', [
-        getAddress(gaugeAddress),
-        1688625368 // Hung change, remove later
-        //timestamp || Math.floor(Date.now() / 1000),
-      ]),
+      gaugeControllerInterface.encodeFunctionData(
+        'gauge_relative_weight_write',
+        [getAddress(gaugeAddress), timestamp || Math.floor(Date.now() / 1000)]
+      ),
     ]);
     const [, res] = await this.multicall.aggregate(payload);
 

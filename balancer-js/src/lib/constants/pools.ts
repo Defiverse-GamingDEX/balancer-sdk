@@ -714,6 +714,9 @@ const POOLS_DEFIVERSE: Pools = {
   Factories: {
     '0xd01ad3085fb3e1fbb2541b5b3326b1f47b189747': 'composableStablePool', // ComposableStable V2
     '0xd1920dd25e4998b0d7cc8de7f12beaf9796c7475': 'weightedPool', // WeightedPool V3
+    '0xe952b0409e6768e270a671ebbc5b8605a7c5a0b8': 'weightedPool', // WeightedPool V3
+    '0xc04ce4fe0f4013814ea1a4b0577d3678d5a7c91c': 'weightedPool', // WeightedPool V3
+    '0x9f9e8668ee128c365365f7d1963b4891034fb513': 'weightedPool', // WeightedPool V3
   },
   Stakable: {
     AllowList: [
@@ -725,7 +728,7 @@ const POOLS_DEFIVERSE: Pools = {
 
 const POOLS_DEFIVERSE_TESTNET: Pools = {
   IdsMap: {
-    veBAL: '0xaa01a32965a072082dac7169b4c9457ce1508be5000200000000000000000001',
+    veBAL: '',
   },
   Pagination: {
     PerPage: 10,
@@ -765,18 +768,7 @@ const POOLS_DEFIVERSE_TESTNET: Pools = {
     '0x48494fa9ead46ee8e3fcb66487a6dbbd34dcafe3': 'weightedPool', // WeightedPool V3
   },
   Stakable: {
-    AllowList: [
-      '0xe815154dc2bb9cceee8054b01e99850b2a8c0d1e000200000000000000000002',
-      '0x6797e1bc05285c51127bb9760d0a2df57bf6f0f0000200000000000000000003',
-      '0xa646c5ce02ce3e91c882d7f7180d1519a76fe588000200000000000000000004',
-      '0xbaf0f0499bc5530e2b6181e22567415f793a3d0b000200000000000000000005',
-      '0xb3a6b8f5d07bae6dd664dbdf45432f78c819ab99000200000000000000000006',
-      '0x5e71ae56c64dee14fe78e31efcf2ee95f89fac45000200000000000000000007',
-      '0x3f197d7d1ff1de36c69cea2a2ab326a01612f848000200000000000000000008',
-      '0xa85ae7f245e690ec70867248d246f60a41bace0e000200000000000000000009',
-      '0x26cdeaf40cf9a83bb7436b560d150c1d5d98b87900020000000000000000000a',
-      '0x6660752d8d3be08bf42fd0a9b14d7ff0244f37da00020000000000000000000b',
-    ],
+    AllowList: [],
   },
   Metadata: {},
 };
@@ -819,6 +811,7 @@ const POOLS_OASYS: Pools = {
   Factories: {
     '0x061e05853fb45d3d41ec227459ec98bb25580ad3': 'composableStablePool', // ComposableStable V2
     '0x4ef0b4827ce3d5fecbc2c6ab80ee81dbf9631d37': 'weightedPool', // WeightedPool V3
+    '0x5737600b98e7f1cf98daca2a36bca22c974370b0': 'weightedPool',
   },
   Stakable: {
     AllowList: [
@@ -869,7 +862,13 @@ const POOLS_OASYS_TESTNET: Pools = {
   },
   Stakable: {
     AllowList: [
-      //
+      '0x4e66d5f08e81979bd5951c93839bc97265681975000200000000000000000000',
+      '0x66180966de2a4180183d7e5dffd76e13b364efe2000200000000000000000001',
+      '0xe5b67bf732b7f96127454126069f94f939914d62000200000000000000000002',
+      '0x82bfc330a92789c02b3ce2daed3ca889b1a112b7000100000000000000000003',
+      '0x0b014863ba970f50b0ea2ad7d57151994b7cac21000100000000000000000004',
+      '0x4a54649fb507ee0bf3ad2e1661516b5700c520ab000100000000000000000005',
+      '0x981401f589c5768a41d3c4d1a39e84a86f11ad9f000200000000000000000006',
     ],
   },
   Metadata: {},

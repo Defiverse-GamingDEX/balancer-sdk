@@ -1,5 +1,5 @@
 import { BigNumber, parseFixed } from '@ethersproject/bignumber';
-import * as SOR from '@balancer-labs/sor';
+import * as SOR from '@defiverse/sor';
 import {
   ExitConcern,
   ExitExactBPTInParameters,

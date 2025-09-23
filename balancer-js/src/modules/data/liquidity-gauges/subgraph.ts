@@ -26,6 +26,7 @@ export class LiquidityGaugesSubgraphRepository
       where: {
         preferentialGauge_not: null,
       },
+      first: 1000,
     });
     const qauges = queryResult.pools.map((pool) => pool.preferentialGauge);
     // TODO: optionally convert subgraph type to sdk internal type

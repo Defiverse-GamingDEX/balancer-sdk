@@ -326,7 +326,7 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
       },
       tokens: {
         wrappedNativeAsset: '0x5a89E11Cb554E00c2f51C4bb7F05bc7Ab0Fa6351',
-        bal: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
+        bal: '',
         veBal: '',
       },
     },
@@ -352,12 +352,12 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
         vault: '0x2Da016a77E290fb82F5af7051198304d57779f5d',
         multicall: '0xEB47269E97EeDB20EF782EB8caFb09ed55b02A39', // NEED CONFIRM
         relayerV4: '0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2', // NEED CONFIRM
-        gaugeController: '0x2465Ba80F58F53090953D552EFa81621a2773885',
-        feeDistributor: '0xb09CA435d40552573f36F171c7f43c91CD1fA7cE',
+        gaugeController: '',
+        feeDistributor: '',
         protocolFeePercentagesProvider:
           '0x38d04d161247031484B31fB8403D20bed5287cf7',
-        veBal: '0xce275df7722D7359e019E91cc6662fa563780794',
-        veBalProxy: '0x9b84768990DbfcA4f5bcd7CF0567D3348836B659',
+        veBal: '',
+        veBalProxy: '',
         balancerHelpers: '0x47404b46E0340F879ECC15977Ce196458cadc2DF',
         //weightedPoolFactory: '0xaB6BaC0f5F4C7C166C5234B528a1cD46Fbcb9F4B',
         weightedPoolFactory: '0x48494Fa9eAd46EE8E3FcB66487a6dBBD34DcAFe3', // no admin role
@@ -366,8 +366,8 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
       },
       tokens: {
         wrappedNativeAsset: '0x6B382742b07AAbBA58c38d792B5d7CBAaB246e99',
-        bal: '0xe34Eec955bF457382cE37e1D8371e559cC6518Fb',
-        veBal: '0xce275df7722D7359e019E91cc6662fa563780794',
+        bal: '0xb5C5C48D3082751f60EE1CAc8FC84a921931EC24',
+        // veBal: '0x9Ba4a34cF63eFBf66c4d6a36470632b7D5511864',
       },
     },
     urls: {
@@ -386,18 +386,19 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
     ],
   },
   [Network.OASYS]: {
-    chainId: Network.OASYS, //16116
+    chainId: Network.OASYS, //248
     addresses: {
       contracts: {
         vault: '0xfb6f8FEdE0Cb63674Ab964affB93D65a4a7D55eA',
         multicall: '0xc52dc4a7dad06BEAB9230D482AcBEcFFc3aB009B', // NEED CONFIRM
         relayerV4: '0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2', // NEED CONFIRM
-        gaugeController: '',
-        feeDistributor: '',
+        // gaugeController: '0x24df42CeCD0C24A35171FD21662FA44dad9C9B5E',
+        gaugeController: '0x2010fA63Eb1Edb6Ff9299De507E613cc05729de6',
+        feeDistributor: '0xE93F762E0d736fB2780bb9271233367942189B86',
         protocolFeePercentagesProvider:
           '0x56C181Ecf83e773978137b2B567d660768f8c8e3',
-        veBal: '',
-        veBalProxy: '',
+        veBal: '0x2B726256AdD04e65403cEf6679A2f2dfF7DDe9F9',
+        veBalProxy: '0x510558F48405593BC51c3f182344e45443fFE301',
         balancerHelpers: '0xf199DDb57d75225e13Fe13eb8BDDE8b16e188374',
         // weightedPoolFactory: '0x5737600b98E7F1cf98dAca2a36bCa22C974370b0',
         weightedPoolFactory: '0x4EF0b4827cE3D5FEcBc2C6ab80Ee81dBF9631D37', // 2025-02-04
@@ -406,8 +407,8 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
       },
       tokens: {
         wrappedNativeAsset: '0x5200000000000000000000000000000000000001',
-        bal: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
-        veBal: '',
+        bal: '0x2B726256AdD04e65403cEf6679A2f2dfF7DDe9F9',
+        veBal: '0x2B726256AdD04e65403cEf6679A2f2dfF7DDe9F9',
       },
     },
     urls: {
@@ -415,7 +416,7 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
       subgraph:
         'https://graphnode-oasys.defi-verse.org/subgraphs/name/balancer-labs/oasys',
       gaugesSubgraph:
-        'https://graphnode.defi-verse.org/subgraphs/name/balancer-labs/gauges-defiverse',
+        'https://graphnode-oasys.defi-verse.org/subgraphs/name/balancer-labs/gauges-oasys',
     },
     pools: {},
     sorConnectingTokens: [
@@ -432,12 +433,12 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
         vault: '0x1f7a0Bea1CB70FaA0f6b7B1126eCbd01Ef4E5BC8',
         multicall: '0xe5Fce05D922e3961F053bD2BF1F29F92d2a0a94B', // NEED CONFIRM
         relayerV4: '0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2', // NEED CONFIRM
-        gaugeController: '',
-        feeDistributor: '',
+        gaugeController: '0xb22b078F294C33aF5132A4d12ed4CbDC6391f0b4',
+        feeDistributor: '0x8A55C4F4f178d62Da281c244e4AD98A9C72c418a',
         protocolFeePercentagesProvider:
-          '0xE9d18Ba9Eabda95860C886C9101FAa470f43cd17',
-        veBal: '',
-        veBalProxy: '',
+          '0xACA587e675102f0fDcBc9FddC441f820cB2c64b9',
+        veBal: '0x9288F664FEFc9f374A53C4307BD3c8F91e83f466',
+        veBalProxy: '0xc26d6B0672A157bC1A51575341043ab4ffDD64aF',
         balancerHelpers: '0x3B847f3Fa5585Dc3aeDB40780fF47e31B0fF14C0',
         // weightedPoolFactory: '0x900c1Bc6a6915Ed153c18763e4B8aE8133E839f1',
         weightedPoolFactory: '0xd2d7F457B9749B6A0A637685A65681F03116125C', // no admin role
@@ -446,16 +447,16 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
       },
       tokens: {
         wrappedNativeAsset: '0x5200000000000000000000000000000000000001',
-        bal: '0xA3496414a9900A9AE5960C1fEC30e563213b68bE',
-        veBal: '',
+        bal: '0x9288F664FEFc9f374A53C4307BD3c8F91e83f466',
+        veBal: '0x9288F664FEFc9f374A53C4307BD3c8F91e83f466',
       },
     },
     urls: {
-      priceUrl: 'https://price-api.gaming-dex.com/api/v1',
+      priceUrl: 'https://price-api-testnet.gaming-dex.com/api/v1',
       subgraph:
         'https://graphnode-oasys-testnet.defi-verse.org/subgraphs/name/balancer-labs/oasys-testnet',
       gaugesSubgraph:
-        'https://graphnode-oasys-testnet.defi-verse.org/subgraphs/name/balancer-labs/gauges-defiverse',
+        'https://graphnode-oasys-testnet.defi-verse.org/subgraphs/name/balancer-labs/gauges-oasys-testnet-v2',
     },
     pools: {},
     sorConnectingTokens: [

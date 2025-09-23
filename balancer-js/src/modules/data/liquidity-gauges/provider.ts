@@ -11,6 +11,8 @@ import type { Findable } from '../types';
 import type { Provider } from '@ethersproject/providers';
 import type { Network } from '@/types';
 
+const oneWeekInMs = 86400 * 7 * 1000;
+
 export interface LiquidityGauge {
   id: string;
   address: string;
@@ -20,6 +22,7 @@ export interface LiquidityGauge {
   totalSupply: number;
   workingSupply: number;
   relativeWeight: number;
+  relativeWeightNextPeriod?: number;
   rewardTokens?: { [tokenAddress: string]: RewardData };
 }
 
@@ -30,7 +33,9 @@ export class LiquidityGaugeSubgraphRPCProvider
   multicall: LiquidityGaugesMulticallRepository;
   subgraph: LiquidityGaugesSubgraphRepository;
   workingSupplies: { [gaugeAddress: string]: number } = {};
+  workingSuppliesNextPeriod: { [gaugeAddress: string]: number } = {};
   relativeWeights: { [gaugeAddress: string]: number } = {};
+  relativeWeightsNextPeriod: { [gaugeAddress: string]: number } = {};
   rewardData: {
     [gaugeAddress: string]: { [tokenAddress: string]: RewardData };
   } = {};
@@ -62,15 +67,7 @@ export class LiquidityGaugeSubgraphRPCProvider
     const gauges: SubgraphLiquidityGauge[] = await this.subgraph.fetch();
     const gaugeAddresses = gauges.map((g) => g.id);
 
-    // if (this.chainId == 1) {
-    // Hung fix APR
-    if (
-      this.chainId == 1 ||
-      this.chainId == 16116 ||
-      this.chainId == 17117 ||
-      this.chainId == 248 ||
-      this.chainId == 9372 
-    ) {
+    if (this.chainId == 248 || this.chainId == 9372) {
       console.time('Fetching multicall.getWorkingSupplies');
       this.workingSupplies = await this.multicall.getWorkingSupplies(
         gaugeAddresses
@@ -83,6 +80,16 @@ export class LiquidityGaugeSubgraphRPCProvider
         gaugeAddresses
       );
       console.timeEnd('Fetching gaugeController.getRelativeWeights');
+
+      const nextWeekTimestamp =
+        Math.round(
+          Math.floor((Date.now() + oneWeekInMs) / oneWeekInMs) * oneWeekInMs
+        ) / 1000;
+      this.relativeWeightsNextPeriod =
+        await this.gaugeController.getRelativeWeights(
+          gaugeAddresses,
+          nextWeekTimestamp
+        );
     }
 
     // Kept as a potential fallback for getting rewardData from RPC
@@ -90,6 +97,8 @@ export class LiquidityGaugeSubgraphRPCProvider
     //   gaugeAddresses //,
     //   // rewardTokens
     // );
+
+    let hasSubgraphData = false;
 
     // Reward data was made available from subgraph, keeping it separate for potential RPC fallback
     this.rewardData = gauges.reduce(
@@ -112,12 +121,20 @@ export class LiquidityGaugeSubgraphRPCProvider
               ])
             )
           : {};
-
+        if (g.tokens && g.tokens.length > 0) {
+          hasSubgraphData = true;
+        }
         return r;
       },
       {}
     );
 
+    if (!hasSubgraphData) {
+      this.rewardData = await this.multicall.getRewardData(
+        gaugeAddresses //,
+        // rewardTokens
+      );
+    }
     return gauges.map(this.compose.bind(this));
   }
 
@@ -163,6 +180,8 @@ export class LiquidityGaugeSubgraphRPCProvider
       totalSupply: parseFloat(subgraphGauge.totalSupply),
       workingSupply: this.workingSupplies[subgraphGauge.id],
       relativeWeight: this.relativeWeights[subgraphGauge.id],
+      relativeWeightNextPeriod:
+        this.relativeWeightsNextPeriod[subgraphGauge.id],
       rewardTokens: this.rewardData[subgraphGauge.id],
     };
   }

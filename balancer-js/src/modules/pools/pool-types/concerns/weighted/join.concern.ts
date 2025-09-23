@@ -1,4 +1,4 @@
-import { WeightedMaths } from '@balancer-labs/sor';
+import { WeightedMaths } from '@defiverse/sor';
 import { WeightedPoolEncoder } from '@/pool-weighted';
 import {
   JoinConcern,

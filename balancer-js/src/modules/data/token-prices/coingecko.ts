@@ -54,21 +54,10 @@ export class CoingeckoPriceRepository implements Findable<Price> {
       XDAI = 'xdai',
       OAS = 'oasys',
     }
-    let assetId: Assets = Assets.ETH;
-    if (this.chainId === 137) assetId = Assets.MATIC;
-    if (this.chainId === 100) assetId = Assets.XDAI;
-    if (
-      this.chainId === 16116 ||
-      this.chainId === 17117 ||
-      this.chainId === 248 ||
-      this.chainId === 9372
-    )
-      assetId = Assets.OAS;
+    const assetId: Assets = Assets.OAS;
+    const url = this.url(['0xdeaddeaddeaddeaddeaddeaddeaddeaddead0000']);
     return axios
-      .get<{ [key in Assets]: Price }>(
-        `https://api.coingecko.com/api/v3/simple/price/?vs_currencies=eth,usd&ids=${assetId}`,
-        { signal }
-      )
+      .get<{ [key in Assets]: Price }>(url, { signal })
       .then(({ data }) => {
         return data[assetId];
       })

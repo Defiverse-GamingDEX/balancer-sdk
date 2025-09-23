@@ -508,13 +508,6 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@balancer-labs/sor@4.1.1-beta.1":
-  version "4.1.1-beta.1"
-  resolved "https://registry.yarnpkg.com/@balancer-labs/sor/-/sor-4.1.1-beta.1.tgz#0d93da9366e34e97a8560f185b9851f38cbe708f"
-  integrity sha512-lBJRa5EwMjOzxHrH8QSZ8RaszhZu4XCwMEpS57eCGv5gvkgADXBaMseZhV/ofCKaagxa4FOBvXY1DlUZtfyMJg==
-  dependencies:
-    isomorphic-fetch "^2.2.1"
-
 "@balancer-labs/typechain@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@balancer-labs/typechain/-/typechain-1.0.0.tgz#823eb13b9e166f7b50334c9d70d9ade81344f5c9"
@@ -526,6 +519,13 @@
   integrity sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
+
+"@defiverse/sor@4.1.14":
+  version "4.1.14"
+  resolved "https://registry.yarnpkg.com/@defiverse/sor/-/sor-4.1.14.tgz#ad2b66fbf8c014df614674395d23577b4f43515e"
+  integrity sha512-0+ne6hIXmvNRWpGTBrRwnBu/9+WtxLK6jl487n09VDn8zBWSTod2G9Pz9arkNDOwfaIc5x7XjqDWsgm+QS10DA==
+  dependencies:
+    isomorphic-fetch "^2.2.1"
 
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"

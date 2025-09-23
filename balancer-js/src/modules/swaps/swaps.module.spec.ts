@@ -17,7 +17,7 @@ import { Interface } from '@ethersproject/abi';
 import { BigNumber } from '@ethersproject/bignumber';
 import { AddressZero, MaxUint256 } from '@ethersproject/constants';
 import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers';
-import { SwapInfo } from '@balancer-labs/sor';
+import { SwapInfo } from '@defiverse/sor';
 import hardhat from 'hardhat';
 
 dotenv.config();

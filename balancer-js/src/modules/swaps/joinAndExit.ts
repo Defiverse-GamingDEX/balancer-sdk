@@ -2,12 +2,7 @@ import { cloneDeep } from 'lodash';
 import { Interface } from '@ethersproject/abi';
 import { BigNumber } from '@ethersproject/bignumber';
 import { AddressZero, MaxInt256, MaxUint256 } from '@ethersproject/constants';
-import {
-  SubgraphPoolBase,
-  SwapInfo,
-  SwapTypes,
-  SwapV2,
-} from '@balancer-labs/sor';
+import { SubgraphPoolBase, SwapInfo, SwapTypes, SwapV2 } from '@defiverse/sor';
 import {
   Relayer,
   OutputReference,

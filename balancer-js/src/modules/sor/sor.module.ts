@@ -1,4 +1,13 @@
-import { SOR, SorConfig, TokenPriceService } from '@balancer-labs/sor';
+import {
+  SOR,
+  SorConfig,
+  TokenPriceService,
+  SwapTypes,
+  SwapOptions,
+  SwapInfo,
+  PoolFilter,
+  SubgraphPoolBase,
+} from '@defiverse/sor';
 import { Provider, JsonRpcProvider } from '@ethersproject/providers';
 import { SubgraphPoolDataService } from './pool-data/subgraphPoolDataService';
 import { CoingeckoTokenPriceService } from './token-price/coingeckoTokenPriceService';
@@ -13,6 +22,8 @@ import {
 } from '@/types';
 import { SubgraphTokenPriceService } from './token-price/subgraphTokenPriceService';
 import { getNetworkConfig } from '@/modules/sdk.helpers';
+
+import { BigNumber, BigNumberish, parseFixed } from '@ethersproject/bignumber';
 
 export class Sor extends SOR {
   constructor(sdkConfig: BalancerSdkConfig) {

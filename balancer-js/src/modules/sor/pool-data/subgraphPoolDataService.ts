@@ -1,4 +1,4 @@
-import { PoolDataService, SubgraphPoolBase } from '@balancer-labs/sor';
+import { PoolDataService, SubgraphPoolBase } from '@defiverse/sor';
 import {
   OrderDirection,
   Pool_OrderBy,
@@ -39,7 +39,7 @@ export class SubgraphPoolDataService implements PoolDataService {
 
   public async getPools(): Promise<SubgraphPoolBase[]> {
     const pools = await this.getSubgraphPools();
-   
+
     const filteredPools = pools.filter((p) => {
       if (!this.network.poolsToIgnore) return true;
       const index = this.network.poolsToIgnore.findIndex((addr) =>
@@ -47,13 +47,13 @@ export class SubgraphPoolDataService implements PoolDataService {
       );
       return index === -1;
     });
-   
+
     const mapped = mapPools(filteredPools);
-   
+
     if (this.sorConfig.fetchOnChainBalances === false) {
       return mapped;
     }
-  
+
     return getOnChainBalances(
       mapped,
       this.network.addresses.contracts.multicall,
@@ -64,13 +64,15 @@ export class SubgraphPoolDataService implements PoolDataService {
 
   private async getSubgraphPools() {
     const { pool0, pool1000, pool2000 } = await this.client.AllPools({
-      where: { swapEnabled: true, totalShares_gt: '0.000000000001' },
+      //where: { swapEnabled: true, totalShares_gt: '0.000000000001' },
+      where: { swapEnabled: true, totalShares_gt: '1' },
+      // where: { swapEnabled: true },
       orderBy: Pool_OrderBy.TotalLiquidity,
       orderDirection: OrderDirection.Desc,
     });
 
     const pools = [...pool0, ...pool1000, ...pool2000];
-  
+
     return pools;
   }
 }

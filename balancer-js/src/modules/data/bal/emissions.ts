@@ -8,10 +8,11 @@
  * https://github.com/balancer-labs/balancer-v2-monorepo/blob/master/pkg/liquidity-mining/contracts/BalancerTokenAdmin.sol
  */
 
-export const INITIAL_RATE = 145000;
-//export const START_EPOCH_TIME = 1648465251; // Ethereum
+// export const INITIAL_RATE = 145000; // Testnet
+export const INITIAL_RATE = 375000; // Mainnet
 
-export const START_EPOCH_TIME = 1685601368; // Defiverse
+// export const START_EPOCH_TIME = 1756339200; // Oasys Testnet
+export const START_EPOCH_TIME = 1758758400; // Oasys Mainnet
 
 const RATE_REDUCTION_TIME = 365 * 86400;
 const RATE_REDUCTION_COEFFICIENT = 2 ** (1 / 4);
@@ -25,13 +26,12 @@ const RATE_REDUCTION_COEFFICIENT = 2 ** (1 / 4);
 export const weekly = (
   currentTimestamp: number = Math.round(new Date().getTime() / 1000)
 ): number => {
-  const miningEpoch = Math.floor(
-    (currentTimestamp - START_EPOCH_TIME) / RATE_REDUCTION_TIME
-  );
+  // const miningEpoch = Math.floor(
+  //   (currentTimestamp - START_EPOCH_TIME) / RATE_REDUCTION_TIME
+  // );
 
-  const rate = INITIAL_RATE * RATE_REDUCTION_COEFFICIENT ** -miningEpoch;
-
-  return rate;
+  // const rate = INITIAL_RATE * RATE_REDUCTION_COEFFICIENT ** -miningEpoch;
+  return INITIAL_RATE;
 };
 
 /**
@@ -41,7 +41,9 @@ export const weekly = (
  * @returns BAL emitted in epoch
  */
 export const total = (epoch: number): number => {
-  const weeklyRate = INITIAL_RATE * RATE_REDUCTION_COEFFICIENT ** -epoch;
+  // const weeklyRate = INITIAL_RATE * RATE_REDUCTION_COEFFICIENT ** -epoch;
+  // const dailyRate = weeklyRate / 7;
+  const weeklyRate = weekly();
   const dailyRate = weeklyRate / 7;
 
   return dailyRate * 365;
@@ -62,6 +64,7 @@ export const between = (start: number, end: number): number => {
     throw 'cannot finish before starting';
   }
 
+  /*
   let totalEmissions = 0;
 
   const startingEpoch = Math.floor(
@@ -94,5 +97,10 @@ export const between = (start: number, end: number): number => {
     (total(endingEpoch) * (RATE_REDUCTION_TIME - secondsInEndingEpoch)) /
     RATE_REDUCTION_TIME;
 
-  return totalEmissions;
+  return totalEmissions;*/
+
+  const dt = end - start;
+  const weeklyRate = weekly();
+  const dailyRate = weeklyRate / 7;
+  return Math.round(dt / 86400) * dailyRate;
 };

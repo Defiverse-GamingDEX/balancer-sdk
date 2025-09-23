@@ -1,10 +1,6 @@
 import { formatFixed } from '@ethersproject/bignumber';
 import { Provider } from '@ethersproject/providers';
-import {
-  PoolFilter,
-  SubgraphPoolBase,
-  SubgraphToken,
-} from '@balancer-labs/sor';
+import { PoolFilter, SubgraphPoolBase, SubgraphToken } from '@defiverse/sor';
 import { Multicaller } from '@/lib/utils/multiCaller';
 import { isSameAddress } from '@/lib/utils';
 import { Vault__factory } from '@balancer-labs/typechain';

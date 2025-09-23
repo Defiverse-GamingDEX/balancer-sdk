@@ -92,6 +92,10 @@ export class Pools implements Findable<PoolWithMethods> {
     return this.aprService.apr(pool);
   }
 
+  async aprNextPeriod(pool: Pool): Promise<AprBreakdown> {
+    return this.aprService.aprNextPeriod(pool);
+  }
+
   /**
    * Calculates Impermanent Loss on any pool data
    *
