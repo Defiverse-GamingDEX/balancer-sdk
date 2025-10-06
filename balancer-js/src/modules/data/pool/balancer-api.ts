@@ -35,7 +35,7 @@ export class PoolsBalancerAPIRepository
     this.client = new BalancerAPIClient(options.url, options.apiKey);
 
     const defaultArgs: GraphQLArgs = {
-      chainId: 1,
+      chainId: 248,
       orderBy: 'totalLiquidity',
       orderDirection: 'desc',
       where: {
@@ -43,7 +43,7 @@ export class PoolsBalancerAPIRepository
           eq: true,
         },
         //totalShares: {
-        //  gt: 0.05,          
+        //  gt: 0.05,
         //},
       },
     };

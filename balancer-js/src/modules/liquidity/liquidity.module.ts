@@ -18,6 +18,10 @@ export class Liquidity {
   ) {}
 
   async getLiquidity(pool: Pool): Promise<string> {
+    if (pool.totalLiquidity) {
+      return pool.totalLiquidity;
+    }
+
     // Remove any tokens with same address as pool as they are pre-printed BPT
     const parsedTokens = pool.tokens.filter((token) => {
       return token.address !== pool.address;

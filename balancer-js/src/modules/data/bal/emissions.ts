@@ -9,10 +9,11 @@
  */
 
 // export const INITIAL_RATE = 145000; // Testnet
-export const INITIAL_RATE = 375000; // Mainnet
+// export const INITIAL_RATE = 375000; // Mainnet
+export const INITIAL_RATE = 335000; // Gauge v3.1
 
-// export const START_EPOCH_TIME = 1756339200; // Oasys Testnet
-export const START_EPOCH_TIME = 1758758400; // Oasys Mainnet
+// export const START_EPOCH_TIME = 1759363200; // Oasys Testnet
+export const START_EPOCH_TIME = 1759363200; // Oasys Mainnet // Thu Oct 02 2025 00:00:00 GMT+0000
 
 const RATE_REDUCTION_TIME = 365 * 86400;
 const RATE_REDUCTION_COEFFICIENT = 2 ** (1 / 4);

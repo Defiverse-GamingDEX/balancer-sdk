@@ -393,12 +393,13 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
         multicall: '0xc52dc4a7dad06BEAB9230D482AcBEcFFc3aB009B', // NEED CONFIRM
         relayerV4: '0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2', // NEED CONFIRM
         // gaugeController: '0x24df42CeCD0C24A35171FD21662FA44dad9C9B5E',
-        gaugeController: '0x2010fA63Eb1Edb6Ff9299De507E613cc05729de6',
+        // gaugeController: '0x2010fA63Eb1Edb6Ff9299De507E613cc05729de6',
+        gaugeController: '0x8e7C11EFEdf91a7E0Dc6f6330f62477F73d04470',
         feeDistributor: '0xE93F762E0d736fB2780bb9271233367942189B86',
         protocolFeePercentagesProvider:
           '0x56C181Ecf83e773978137b2B567d660768f8c8e3',
         veBal: '0x2B726256AdD04e65403cEf6679A2f2dfF7DDe9F9',
-        veBalProxy: '0x510558F48405593BC51c3f182344e45443fFE301',
+        veBalProxy: '0x47A1b4A980b355BE6E27CD2242ABb1Aed03d0898',
         balancerHelpers: '0xf199DDb57d75225e13Fe13eb8BDDE8b16e188374',
         // weightedPoolFactory: '0x5737600b98E7F1cf98dAca2a36bCa22C974370b0',
         weightedPoolFactory: '0x4EF0b4827cE3D5FEcBc2C6ab80Ee81dBF9631D37', // 2025-02-04
