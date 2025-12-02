@@ -394,12 +394,13 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
         relayerV4: '0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2', // NEED CONFIRM
         // gaugeController: '0x24df42CeCD0C24A35171FD21662FA44dad9C9B5E',
         // gaugeController: '0x2010fA63Eb1Edb6Ff9299De507E613cc05729de6',
-        gaugeController: '0x8e7C11EFEdf91a7E0Dc6f6330f62477F73d04470',
+        // gaugeController: '0x8e7C11EFEdf91a7E0Dc6f6330f62477F73d04470',
+        gaugeController: '0x2D2BB676EfE00998ABf25aa499A19af16cC99F3e',
         feeDistributor: '0xE93F762E0d736fB2780bb9271233367942189B86',
         protocolFeePercentagesProvider:
           '0x56C181Ecf83e773978137b2B567d660768f8c8e3',
         veBal: '0x2B726256AdD04e65403cEf6679A2f2dfF7DDe9F9',
-        veBalProxy: '0x47A1b4A980b355BE6E27CD2242ABb1Aed03d0898',
+        veBalProxy: '0xe5276B39E604999c05d3051D896310A620E4Cc49',
         balancerHelpers: '0xf199DDb57d75225e13Fe13eb8BDDE8b16e188374',
         // weightedPoolFactory: '0x5737600b98E7F1cf98dAca2a36bCa22C974370b0',
         weightedPoolFactory: '0x4EF0b4827cE3D5FEcBc2C6ab80Ee81dBF9631D37', // 2025-02-04
@@ -434,12 +435,12 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
         vault: '0x1f7a0Bea1CB70FaA0f6b7B1126eCbd01Ef4E5BC8',
         multicall: '0xe5Fce05D922e3961F053bD2BF1F29F92d2a0a94B', // NEED CONFIRM
         relayerV4: '0x00e695aA8000df01B8DC8401B4C34Fba5D56BBb2', // NEED CONFIRM
-        gaugeController: '0xb22b078F294C33aF5132A4d12ed4CbDC6391f0b4',
+        gaugeController: '0x82e3ACEE6e747B164327cca5e6309bb38f114848',
         feeDistributor: '0x8A55C4F4f178d62Da281c244e4AD98A9C72c418a',
         protocolFeePercentagesProvider:
           '0xACA587e675102f0fDcBc9FddC441f820cB2c64b9',
         veBal: '0x9288F664FEFc9f374A53C4307BD3c8F91e83f466',
-        veBalProxy: '0xc26d6B0672A157bC1A51575341043ab4ffDD64aF',
+        veBalProxy: '0x0b205Ed28BC51E7DE4686ef725488bCecEe87606',
         balancerHelpers: '0x3B847f3Fa5585Dc3aeDB40780fF47e31B0fF14C0',
         // weightedPoolFactory: '0x900c1Bc6a6915Ed153c18763e4B8aE8133E839f1',
         weightedPoolFactory: '0xd2d7F457B9749B6A0A637685A65681F03116125C', // no admin role

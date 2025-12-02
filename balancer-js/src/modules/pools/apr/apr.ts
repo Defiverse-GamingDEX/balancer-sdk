@@ -611,8 +611,6 @@ export class PoolApr {
   private async bptPrice(pool: Pool) {
     const _totalLiquidity = await this.totalLiquidity(pool);
     const _totalShares = pool.totalShares;
-    console.error('===_totalLiquidity:', _totalLiquidity);
-    console.error('===totalShares:', _totalShares);
     return parseFloat(_totalLiquidity) / parseFloat(_totalShares);
   }
 

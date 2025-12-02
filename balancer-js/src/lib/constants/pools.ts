@@ -835,7 +835,9 @@ const POOLS_OASYS_TESTNET: Pools = {
   DynamicFees: {
     Gauntlet: [],
   },
-  BlockList: [''],
+  BlockList: [
+    '0x950f31e8a327a49ae4443284d0137f3b74858474000200000000000000000030',
+  ],
   ExcludedPoolTypes: [
     'Element',
     'AaveLinear',
@@ -850,7 +852,8 @@ const POOLS_OASYS_TESTNET: Pools = {
   ],
   Stable: {
     AllowList: [
-      // '0xfedb19ec000d38d92af4b21436870f115db22725000000000000000000000010', // bb-ag-usd
+      '0xeaac5ae5255407cf933dfcf2b0d3eb4f5dc042cd000000000000000000000035',
+      '0x34936c3e61371e9ebd1dcd580b23a52c26080b70000000000000000000000036',
     ],
   },
   Investment: {
